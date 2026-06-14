@@ -1,0 +1,111 @@
+package com.farmersoplenty.registry;
+
+import com.farmersoplenty.FarmersOPlenty;
+
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * SINGLE SOURCE OF TRUTH for every item this mod adds.
+ *
+ * Declaring an item here also drives data generation automatically:
+ *   - basic item model is generated      (item-model provider reads ENTRIES)
+ *   - en_us name derived from the path   (lang provider reads ENTRIES + overrides)
+ *   - added to the creative tab          (ModCreativeTabs reads ENTRIES)
+ *   - declared tags are emitted          (item-tag provider reads TAGGED)
+ *   - food(...) auto-applies FOOD        (the README's "all edibles are FOOD" rule)
+ *
+ * Net result: most items are ONE line. Only recipes live elsewhere (recipe provider),
+ * because recipe contents are unique per item rather than duplicated metadata.
+ */
+public final class ModItems {
+    private ModItems() {}
+
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(FarmersOPlenty.MODID);
+
+    // ---- Datagen metadata, captured as items are declared (must sit ABOVE the content below) ----
+    /** Every declared item, in declaration order (= creative tab order). */
+    public static final List<DeferredItem<Item>> ENTRIES = new ArrayList<>();
+    /** Display-name overrides for names the auto title-caser can't get right (apostrophes etc.). */
+    public static final Map<DeferredItem<Item>, String> DISPLAY_NAME_OVERRIDES = new LinkedHashMap<>();
+    /** tag -> items belonging to it. */
+    public static final Map<TagKey<Item>, List<DeferredItem<Item>>> TAGGED = new LinkedHashMap<>();
+
+    // =====================================================================================
+    //  CONTENT  (step 3+ goes here — keep declarations BELOW the maps above)
+    // =====================================================================================
+    //
+    // Ingredient example:
+    //   public static final DeferredItem<Item> CHOPPED_CATTAIL = animalFood("chopped_cattail");
+    //
+    // Meal example (auto-tagged FOOD + the extra tags you pass):
+    //   public static final DeferredItem<Item> CATTAIL_RICE_SOUP =
+    //           food("cattail_rice_soup", nourish(1, 0.5f), ModTags.Items.MEALS, ModTags.Items.SOUPS);
+    //
+    // Custom display name when needed:
+    //   public static final DeferredItem<Item> SHEPHERDS_PIE =
+    //           named(food("shepherds_pie", nourish(5, 0.6f), ModTags.Items.MEALS), "Shepherd's Pie");
+
+
+    // =====================================================================================
+    //  HELPERS
+    // =====================================================================================
+
+    /** A plain (non-food) item, e.g. an ingredient. */
+    @SafeVarargs
+    public static DeferredItem<Item> item(String name, TagKey<Item>... tags) {
+        return register(name, new Item.Properties(), tags);
+    }
+
+    /** A food item. Auto-tagged FOOD, plus any extra tags (MEALS, SOUPS, DRINKS...). */
+    @SafeVarargs
+    public static DeferredItem<Item> food(String name, FoodProperties food, TagKey<Item>... extraTags) {
+        DeferredItem<Item> item = register(name, new Item.Properties().food(food), extraTags);
+        addTag(ModTags.Items.FOOD, item);
+        return item;
+    }
+
+    /** Ingredient that also goes in ANIMAL_FOODS (the README's chopped/crushed items). */
+    @SafeVarargs
+    public static DeferredItem<Item> animalFood(String name, TagKey<Item>... extraTags) {
+        DeferredItem<Item> item = item(name, extraTags);
+        addTag(ModTags.Items.ANIMAL_FOODS, item);
+        return item;
+    }
+
+    /** FoodProperties shorthand from nutrition + saturation. */
+    public static FoodProperties nourish(int nutrition, float saturation) {
+        return new FoodProperties.Builder().nutrition(nutrition).saturationModifier(saturation).build();
+    }
+
+    /** Attach an explicit display name (use when the auto title-caser won't do). */
+    public static DeferredItem<Item> named(DeferredItem<Item> item, String displayName) {
+        DISPLAY_NAME_OVERRIDES.put(item, displayName);
+        return item;
+    }
+
+    @SafeVarargs
+    private static DeferredItem<Item> register(String name, Item.Properties props, TagKey<Item>... tags) {
+        DeferredItem<Item> item = ITEMS.registerSimpleItem(name, props);
+        ENTRIES.add(item);
+        for (TagKey<Item> tag : tags) addTag(tag, item);
+        return item;
+    }
+
+    private static void addTag(TagKey<Item> tag, DeferredItem<Item> item) {
+        TAGGED.computeIfAbsent(tag, k -> new ArrayList<>()).add(item);
+    }
+
+    public static void register(IEventBus bus) {
+        ITEMS.register(bus);
+    }
+}

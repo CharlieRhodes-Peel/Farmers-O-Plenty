@@ -42,11 +42,11 @@ displayName="${mod_name}" #mandatory
 #credits="" #optional
 
 # The authors of the mod, displayed in the mod UI (optional)
-#authors=""
+authors="Milkski"
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Example mod description.
+A Compatibility Mod For Farmer's Delight and Biomes O' Plenty that adds new recipes to Farmer's Delight
 '''
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
