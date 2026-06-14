@@ -9,19 +9,19 @@ Alright lets just map out my brain and see what needs to be done:
 New **Cabinets** for all types of wood Biomes O' Plenty Adds: (12)
 All should be tagged with **Cabinets**
 
-[] Fir Cabinet
-[] Pine Cabinet
-[] Maple Cabinet
-[] Redwood Cabinet
-[] Mahogany Cabinet
-[] Jacaranda Cabinet
-[] Palm Cabinet
-[] Willow Cabinet
-[] Dead Cabinet
-[] Magic Cabinet
-[] Umbran Cabinet
-[] Hellbark Cabinet
-[] Empyreal Cabinet
+- [] Fir Cabinet
+- [] Pine Cabinet
+- [] Maple Cabinet
+- [] Redwood Cabinet
+- [] Mahogany Cabinet
+- [] Jacaranda Cabinet
+- [] Palm Cabinet
+- [] Willow Cabinet
+- [] Dead Cabinet
+- [] Magic Cabinet
+- [] Umbran Cabinet
+- [] Hellbark Cabinet
+- [] Empyreal Cabinet
 ### New dishes:
 All of these should be tagged with **Meals**
 
