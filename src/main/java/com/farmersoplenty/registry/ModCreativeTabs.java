@@ -25,7 +25,7 @@ public final class ModCreativeTabs {
             TABS.register("main", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup." + FarmersOPlenty.MODID))
                     // TODO: swap to a signature dish once it exists, e.g. ModItems.CATTAIL_RICE_SOUP.get()...
-                    .icon(() -> Items.BOWL.getDefaultInstance())
+                    .icon(Items.BOWL::getDefaultInstance)
                     .displayItems((params, output) ->
                             ModItems.ENTRIES.forEach(item -> output.accept(item.get())))
                     .build());

@@ -45,7 +45,17 @@ public final class ModItems {
     // =====================================================================================
     //
     // Ingredient example:
-    //   public static final DeferredItem<Item> CHOPPED_CATTAIL = animalFood("chopped_cattail");
+
+
+    // ------- Ingredients ------
+    public static final DeferredItem<Item> CHOPPED_CATTAIL = animalFood("chopped_cattail");
+
+
+    // -------- Dishes -------
+    // Soups
+    public static final DeferredItem<Item> CATTAIL_RICE_SOUP = food("cattail_rice_soup", nourish(1,0.5f), ModTags.Items.MEALS, ModTags.Items.SOUPS);
+
+
     //
     // Meal example (auto-tagged FOOD + the extra tags you pass):
     //   public static final DeferredItem<Item> CATTAIL_RICE_SOUP =
