@@ -43,28 +43,14 @@ public final class ModItems {
     // =====================================================================================
     //  CONTENT  (step 3+ goes here — keep declarations BELOW the maps above)
     // =====================================================================================
-    //
-    // Ingredient example:
-
 
     // ------- Ingredients ------
     public static final DeferredItem<Item> CHOPPED_CATTAIL = animalFood("chopped_cattail");
 
-
     // -------- Dishes -------
     // Soups
-    public static final DeferredItem<Item> CATTAIL_RICE_SOUP = food("cattail_rice_soup", nourish(1,0.5f), ModTags.Items.MEALS, ModTags.Items.SOUPS);
-
-
-    //
-    // Meal example (auto-tagged FOOD + the extra tags you pass):
-    //   public static final DeferredItem<Item> CATTAIL_RICE_SOUP =
-    //           food("cattail_rice_soup", nourish(1, 0.5f), ModTags.Items.MEALS, ModTags.Items.SOUPS);
-    //
-    // Custom display name when needed:
-    //   public static final DeferredItem<Item> SHEPHERDS_PIE =
-    //           named(food("shepherds_pie", nourish(5, 0.6f), ModTags.Items.MEALS), "Shepherd's Pie");
-
+    //TODO: Make Dishes Drop Bowls on eat
+    public static final DeferredItem<Item> CATTAIL_RICE_SOUP = food("cattail_rice_soup", nourish(8,3f), ModTags.Items.MEALS, ModTags.Items.SOUPS);
 
     // =====================================================================================
     //  HELPERS
