@@ -1,25 +1,165 @@
+# Biomes O' Delight
+Alright lets just map out my brain and see what needs to be done:
 
-Installation information
-=======
+##### General Notes
+**ALL EDIBLE FOODS SHOULD BE MARKED WITH TAG FOOD**
+# Additions: 
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+### Cabinets
+New **Cabinets** for all types of wood Biomes O' Plenty Adds: (12)
+All should be tagged with **Cabinets**
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+[] Fir Cabinet
+[] Pine Cabinet
+[] Maple Cabinet
+[] Redwood Cabinet
+[] Mahogany Cabinet
+[] Jacaranda Cabinet
+[] Palm Cabinet
+[] Willow Cabinet
+[] Dead Cabinet
+[] Magic Cabinet
+[] Umbran Cabinet
+[] Hellbark Cabinet
+[] Empyreal Cabinet
+### New dishes:
+All of these should be tagged with **Meals**
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+| Dish Name                | Ingredients                                 | Nourishment | Tags  | Notes             |
+| ------------------------ | ------------------------------------------- | ----------- | ----- | ----------------- |
+| Cattail Rice Soup        | Cattail/Chopped Cattail + Rice + Onion      | 1           | Soups | N/A               |
+| Lavender Honey Ice Cream | Lavender + Honey Bottle + Milk Bottle + Ice | 3           |       | N/A               |
+| Nether Soup              | Bramble + Eyebulb + Blaze Powder            | 5           | Soups | MayB fire res?    |
+| Berry Oat Bakewell       | Glow Berry + Sweet Berry + Crushed Oats     | 3           |       | N/A               |
+| Pork and Cactus Rice     | Raw Pork/Bacon + Cactus/Tiny Cactus + Rice  | 3           |       | N/A               |
+| Waterlily Mix            | Salmon + Onion + Waterlily Stem + Potato    | 5           |       | needs better name |
+| Soup of Ender            | Eye of Ender + 2xChorus Fruit + Lumaloop    | 3           | Soups | MayB Levatating?  |
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+### New items:
+All can be tagged with **Animal Foods**
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+| Name             | From                | Tags | Notes                             |
+| ---------------- | ------------------- | ---- | --------------------------------- |
+| Chopped Cattail  | Chopping Cattail    |      | N/A                               |
+| Crushed Oats     | Chopping Sea Oats   |      | N/A                               |
+| Waterlily Stem   | Chopping Waterlily  |      | N/A                               |
+| Glowflower Berry | Chopping Glowflower |      | Could be placeable like glowberry |
+### New Others
+
+| Name                 | Ingredients                                                              | Effect            | Tags             | Notes                               |
+| -------------------- | ------------------------------------------------------------------------ | ----------------- | ---------------- | ----------------------------------- |
+| Beer                 | 2xBarley + Wheat + Sugar \| Served in Glass Bottle                       | Absorption (1:00) | Drinks           | Should take a long time to make     |
+| Glow Glow Juice      | 2x Glow Berry + Glowflower Berry + Sugar + Ice \| Served In Glass Bottle | Glowing (1:00)    | Drinks           | Should look like Glow Berry Custard |
+| Honey Flapjacks      | 2xCrushed Oats + Honey Bottle + Sugar (CRAFTING NOT COOKING)             | Eat               | Cookies / Sweets |                                     |
+| Clover Blossom Salad | Clover + Cabbage Foods + Beetroot + Glowflower Berry                     | Reg (0:10)        | Meals            |                                     |
+
+
+# ----------- Possible Biomes O' Plenty Items for Food -----------
+Listed in order of what I think would be good
+[x] Cattail
+[x] Barley
+[x] Bramble
+[x] Eyebulb
+[x] Glowflower
+[x] Lumaloop
+[x] Sea Oats
+[x] Tiny Cactus
+[x] Waterlily
+[] Clover
+[x] Lavender
+
+# Things Alright in Farmers Delight
+Listed out here so I don't have to keep opening Minecraft to check
+##### Ingredients
+- Cabbage + Cabbage Leaf
+- Tomato + Tomato Sauce
+- Onion
+- Rice
+- Fried Egg + (Vanilla) Egg
+- Pumpkin Slice + (Vanilla) Pumpkin
+
+##### Meats (all these) come with cooked variants
+- Minced Beef
+- Raw Chicken Cuts
+- Raw Bacon
+- Raw Cod Slice
+- Raw Salmon Slice
+- Raw Mutton Chops
+- Ham
+
+##### Foods
+###### Cookies
+- Sweet Berry Cookie
+- Honey Cookie
+###### Slices of Cakes
+- Slice of Cake
+- Slice of Apple Pie
+- Slice of Chocolate Pie
+- Slice of Pumpkin Pie
+###### Salads
+- Fruit Salad
+- Mixed Salad
+- Nether Salad
+###### Sandwiches (anything with bread / dough)
+- Egg Sandwich
+- Chicken Sandwich
+- Hamburger
+- Bacon Sandwich
+- Mutton Wrap
+- Dumplings
+###### Drinks
+- Hot Cocoa
+- Apple Cider
+- Melon Juice
+- Milk Bottle
+###### Rolls
+- Cabbage Rolls
+- Salmon Roll
+- Cod Roll
+- Kelp Roll
+- Kelp Roll Slice
+###### Others
+- Melon Popsicle
+- Glow Berry Custard
+- Stuffed Potato
+
+##### Dishes
+- Cooked Rice
+- Tomato Sauce
+- Bone Broth
+- Beef Stew
+- Chicken Soup
+- Vegetable Soup
+- Fish Stew
+- Fried Rice
+- Pumpkin Soup
+- Baked Cod Stew
+- Noodle Soup
+- Onion Soup
+- Bacon and Eggs
+- Pasta with meatballs
+- Pasta with mutton chops
+- Mushroom rice
+- Roasted Mutton Chops
+- Vegetable Noodles
+- Steak and Potatoes
+- Ratatouille
+- Squid Ink Pasta
+- Grilled Salmon
+- Plate of Roast Chicken
+- Bowl of Stuffed Pumpkin
+- Plate of Honey Glazed Ham
+- Plate of Shepard's Pie
+- Bowl of Gleaming Salad
+- Dog Food
+- Horse Feed
+##### Placeables
+- Apple Pie
+- Sweet Berry Cheesecake
+- Chocolate Pie
+- Roast Chicken
+- Stuffed Pumpkin
+- Honey Glazed Ham
+- Shepard's Pie
+- Gleaming Salad
+- Rice Roll Medley
