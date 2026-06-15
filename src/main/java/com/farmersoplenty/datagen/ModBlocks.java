@@ -31,6 +31,7 @@ public final class ModBlocks {
 
     // ---- Cabinets (one per BOP wood type) ----
     public static final DeferredBlock<CabinetBlock> FIR_CABINET = cabinet("fir_cabinet");
+    public static final DeferredBlock<CabinetBlock> WILLOW_CABINET = cabinet("willow_cabinet");
 
     /** Registers a cabinet block, records it, and registers its BlockItem (via ModItems). */
     private static DeferredBlock<CabinetBlock> cabinet(String name) {

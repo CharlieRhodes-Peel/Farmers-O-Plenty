@@ -16,7 +16,7 @@ All should be tagged with **Cabinets**
 - [ ] Mahogany Cabinet
 - [ ] Jacaranda Cabinet
 - [ ] Palm Cabinet
-- [ ] Willow Cabinet
+- [x] Willow Cabinet
 - [ ] Dead Cabinet
 - [ ] Magic Cabinet
 - [ ] Umbran Cabinet
