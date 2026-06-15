@@ -72,13 +72,14 @@ public final class ModItems {
     /** A plain (non-food) item, e.g. an ingredient. */
     @SafeVarargs
     public static DeferredItem<Item> item(String name, TagKey<Item>... tags) {
-        return register(name, new Item.Properties(), tags);
+        return register(name, Item::new, tags);
     }
 
     /** A food item. Auto-tagged FOOD, plus any extra tags (MEALS, SOUPS, DRINKS...). */
     @SafeVarargs
     public static DeferredItem<Item> food(String name, FoodProperties food, TagKey<Item>... extraTags) {
-        DeferredItem<Item> item = register(name, new Item.Properties().food(food), extraTags);
+        DeferredItem<Item> item = register(name,
+                props -> new EffectTooltipItem(props.food(food)), extraTags);
         addTag(ModTags.Items.FOOD, item);
         return item;
     }
@@ -133,8 +134,10 @@ public final class ModItems {
     }
 
     @SafeVarargs
-    private static DeferredItem<Item> register(String name, Item.Properties props, TagKey<Item>... tags) {
-        DeferredItem<Item> item = ITEMS.registerSimpleItem(name, props);
+    private static DeferredItem<Item> register(String name,
+                                               java.util.function.Function<Item.Properties, Item> factory,
+                                               TagKey<Item>... tags) {
+        DeferredItem<Item> item = ITEMS.register(name, () -> factory.apply(new Item.Properties()));
         ENTRIES.add(item);
         for (TagKey<Item> tag : tags) addTag(tag, item);
         return item;
