@@ -10,17 +10,6 @@ import net.minecraft.world.level.ItemLike;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 
-/**
- * All cooking pot recipes for Farmer's O' Plenty.
- *
- * Cook times:  FAST   = 100 ticks (5s)
- *              NORMAL = 200 ticks (10s)  <- standard for most dishes
- *              SLOW   = 400 ticks (20s)
- *
- * XP values:   SMALL  = 0.35f
- *              MEDIUM = 1.0f
- *              LARGE  = 2.0f
- */
 public final class CookingPotRecipes {
     private CookingPotRecipes() {}
 

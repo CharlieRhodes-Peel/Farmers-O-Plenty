@@ -7,10 +7,13 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.registry.ModEffects;
@@ -41,7 +44,7 @@ public final class ModItems {
 
     // ---- Datagen metadata, captured as items are declared (must sit ABOVE the content below) ----
     /** Every declared item, in declaration order (= creative tab order). */
-    public static final List<DeferredItem<Item>> ENTRIES = new ArrayList<>();
+    public static final List<DeferredItem<? extends Item>> ENTRIES = new ArrayList<>();
     /** Display-name overrides for names the auto title-caser can't get right (apostrophes etc.). */
     public static final Map<DeferredItem<Item>, String> DISPLAY_NAME_OVERRIDES = new LinkedHashMap<>();
     /** tag -> items belonging to it. */
@@ -120,6 +123,12 @@ public final class ModItems {
     /** Attach an explicit display name (use when the auto title-caser won't do). */
     public static DeferredItem<Item> named(DeferredItem<Item> item, String displayName) {
         DISPLAY_NAME_OVERRIDES.put(item, displayName);
+        return item;
+    }
+
+    public static DeferredItem<BlockItem> blockItem(DeferredBlock<? extends Block> block){
+        DeferredItem<BlockItem> item = ITEMS.registerSimpleBlockItem(block);
+        ENTRIES.add(item);
         return item;
     }
 

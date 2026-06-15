@@ -5,6 +5,7 @@ import com.farmersoplenty.datagen.recipes.CuttingBoardRecipes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
+import vectorwing.farmersdelight.data.recipe.CraftingRecipes;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -26,6 +27,6 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
     protected void buildRecipes(RecipeOutput output) {
         CuttingBoardRecipes.register(output);
         CookingPotRecipes.register(output);
-        // Step 5+: CraftingRecipes.register(output);  -- shapeless/shaped (flapjacks, salads, cabinets)
+        CraftingRecipes.register(output);
     }
 }

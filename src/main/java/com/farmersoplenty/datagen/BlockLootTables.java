@@ -1,5 +1,6 @@
 package com.farmersoplenty.datagen;
 
+import com.farmersoplenty.datagen.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
@@ -21,13 +22,11 @@ public class BlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        // Step 6 example:
-        // dropSelf(ModBlocks.FIR_CABINET.get());
+        ModBlocks.CABINETS.forEach(c -> dropSelf(c.get()));
     }
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        // Step 6: return ModBlocks.BLOCKS.getEntries().stream().map(e -> e.get()).toList();
-        return List.of();
+        return ModBlocks.CABINETS.stream().map(c -> (Block) c.get()).toList();
     }
 }

@@ -4,6 +4,7 @@ import com.farmersoplenty.FarmersOPlenty;
 
 import com.farmersoplenty.registry.ModItems;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.BlockItem;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 /**
@@ -18,6 +19,8 @@ public class ItemModelProvider extends net.neoforged.neoforge.client.model.gener
 
     @Override
     protected void registerModels() {
-        ModItems.ENTRIES.forEach(item -> basicItem(item.get()));
+        ModItems.ENTRIES.forEach(item -> {
+            if (!(item.get() instanceof BlockItem)) basicItem(item.get());
+        });
     }
 }

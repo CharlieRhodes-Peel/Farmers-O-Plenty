@@ -3,6 +3,7 @@ package com.farmersoplenty.datagen;
 import com.farmersoplenty.FarmersOPlenty;
 
 import com.farmersoplenty.registry.ModItems;
+import com.farmersoplenty.registry.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagsProvider;
@@ -32,5 +33,7 @@ public class ItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvider {
             var appender = tag(tagKey);
             items.forEach(item -> appender.add(item.get()));
         });
+
+        copy(ModTags.Blocks.CABINETS, ModTags.Items.CABINETS);
     }
 }

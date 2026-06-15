@@ -1,6 +1,6 @@
 package com.farmersoplenty;
 
-import com.farmersoplenty.registry.ModBlocks;
+import com.farmersoplenty.datagen.ModBlocks;
 import com.farmersoplenty.registry.ModCreativeTabs;
 import com.farmersoplenty.registry.ModItems;
 import com.mojang.logging.LogUtils;

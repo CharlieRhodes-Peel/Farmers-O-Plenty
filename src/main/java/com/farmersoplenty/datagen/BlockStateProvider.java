@@ -2,8 +2,13 @@ package com.farmersoplenty.datagen;
 
 import com.farmersoplenty.FarmersOPlenty;
 
+import com.farmersoplenty.datagen.ModBlocks;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 /**
  * Generates blockstate JSON + block models + (usually) their item models.
@@ -14,8 +19,18 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
         super(output, FarmersOPlenty.MODID, exFileHelper);
     }
 
+    private void cabinetBlock(Block block) {
+        String n = BuiltInRegistries.BLOCK.getKey(block).getPath();      // e.g. "fir_cabinet"
+        ModelFile closed = models().orientable(n,
+                modLoc("block/" + n + "_side"), modLoc("block/" + n + "_front"), modLoc("block/" + n + "_top"));
+        ModelFile open = models().orientable(n + "_open",
+                modLoc("block/" + n + "_side"), modLoc("block/" + n + "_front_open"), modLoc("block/" + n + "_top"));
+        horizontalBlock(block, state -> state.getValue(CabinetBlock.OPEN) ? open : closed);
+        simpleBlockItem(block, closed);
+    }
+
     @Override
     protected void registerStatesAndModels() {
-        // Step 6 example (cabinet): horizontalBlock(...) / a custom cabinet model template.
+        ModBlocks.CABINETS.forEach(c -> cabinetBlock(c.get()));
     }
 }

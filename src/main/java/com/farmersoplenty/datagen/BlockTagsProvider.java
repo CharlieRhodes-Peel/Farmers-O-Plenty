@@ -2,8 +2,11 @@ package com.farmersoplenty.datagen;
 
 import com.farmersoplenty.FarmersOPlenty;
 
+import com.farmersoplenty.datagen.ModBlocks;
+import com.farmersoplenty.registry.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -23,7 +26,8 @@ public class BlockTagsProvider extends net.neoforged.neoforge.common.data.BlockT
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        // Step 6 example:
-        // tag(BlockTags.MINEABLE_WITH_AXE).add(ModBlocks.FIR_CABINET.get());
+        var cab = tag(ModTags.Blocks.CABINETS);
+        var axe = tag(BlockTags.MINEABLE_WITH_AXE);
+        ModBlocks.CABINETS.forEach(c -> { cab.add(c.get()); axe.add(c.get());});
     }
 }
