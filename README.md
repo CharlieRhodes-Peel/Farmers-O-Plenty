@@ -17,9 +17,9 @@ All should be tagged with **Cabinets**
 - [ ] Jacaranda Cabinet
 - [ ] Palm Cabinet
 - [x] Willow Cabinet
-- [ ] Dead Cabinet
+- [x] Dead Cabinet
 - [ ] Magic Cabinet
-- [ ] Umbran Cabinet
+- [x] Umbran Cabinet
 - [ ] Hellbark Cabinet
 - [ ] Empyreal Cabinet
 ### New dishes:

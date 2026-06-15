@@ -1,11 +1,11 @@
 package com.farmersoplenty.datagen;
 
 import com.farmersoplenty.datagen.recipes.CookingPotRecipes;
+import com.farmersoplenty.datagen.recipes.CraftingRecipes;
 import com.farmersoplenty.datagen.recipes.CuttingBoardRecipes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
-import vectorwing.farmersdelight.data.recipe.CraftingRecipes;
 
 import java.util.concurrent.CompletableFuture;
 
