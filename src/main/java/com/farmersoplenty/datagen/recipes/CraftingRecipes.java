@@ -18,6 +18,7 @@ public final class CraftingRecipes {
     public static void register(RecipeOutput output) {
         cabinet(output, ModBlocks.FIR_CABINET.get(), "fir");
         cabinet(output, ModBlocks.FIR_CABINET.get(), "willow");
+        cabinet(output, ModBlocks.FIR_CABINET.get(), "dead");
     }
 
     private static void cabinet(RecipeOutput output, ItemLike result, String bopWood) {

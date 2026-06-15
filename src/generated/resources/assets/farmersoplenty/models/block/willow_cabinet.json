@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "farmersoplenty:block/willow_cabinet_front",
+    "side": "farmersoplenty:block/willow_cabinet_side",
+    "top": "farmersoplenty:block/willow_cabinet_top"
+  }
+}
