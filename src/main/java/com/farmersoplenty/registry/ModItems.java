@@ -2,17 +2,24 @@ package com.farmersoplenty.registry;
 
 import com.farmersoplenty.FarmersOPlenty;
 
+import net.minecraft.core.Holder;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Supplier;
 
 /**
  * SINGLE SOURCE OF TRUTH for every item this mod adds.
@@ -49,8 +56,11 @@ public final class ModItems {
 
     // -------- Dishes -------
     // Soups
-    //TODO: Make Dishes Drop Bowls on eat
-    public static final DeferredItem<Item> CATTAIL_RICE_SOUP = food("cattail_rice_soup", nourish(8,3f), ModTags.Items.MEALS, ModTags.Items.SOUPS);
+    public static final DeferredItem<Item> CATTAIL_RICE_SOUP = food("cattail_rice_soup",
+            foodStats(8,3f, Items.BOWL, createEffect(ModEffects.NOURISHMENT, 3)),
+            ModTags.Items.MEALS,
+            ModTags.Items.SOUPS
+    );
 
     // =====================================================================================
     //  HELPERS
@@ -78,9 +88,33 @@ public final class ModItems {
         return item;
     }
 
-    /** FoodProperties shorthand from nutrition + saturation. */
-    public static FoodProperties nourish(int nutrition, float saturation) {
+    // ----------- Food Stats + Overloads --------
+    public static FoodProperties foodStats(int nutrition, float saturation){
         return new FoodProperties.Builder().nutrition(nutrition).saturationModifier(saturation).build();
+    }
+
+    //Returns Container on use
+    public static FoodProperties foodStats(int nutrition, float saturation, ItemLike container) {
+        return new FoodProperties.Builder()
+                .nutrition(nutrition)
+                .saturationModifier(saturation)
+                .usingConvertsTo(container)
+                .build();
+    }
+
+    //Applied A potion effect and return container on use
+    public static FoodProperties foodStats(int nutrition, float saturation, ItemLike container, Supplier<MobEffectInstance> potionEffect) {
+        return new FoodProperties.Builder()
+                .nutrition(nutrition)
+                .saturationModifier(saturation)
+                .usingConvertsTo(container)
+                .effect(potionEffect, 1.0f)
+                .build();
+    }
+
+    //Type changing helper
+    private static Supplier<MobEffectInstance> createEffect(Holder<MobEffect> effect, int minutes){
+        return () -> new MobEffectInstance(effect, minutes * 1200); // * 1200 to convert minutes -> ticks
     }
 
     /** Attach an explicit display name (use when the auto title-caser won't do). */
