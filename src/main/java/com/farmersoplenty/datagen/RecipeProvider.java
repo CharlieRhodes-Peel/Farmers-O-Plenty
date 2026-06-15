@@ -1,8 +1,18 @@
 package com.farmersoplenty.datagen;
 
+import com.farmersoplenty.FarmersOPlenty;
+import com.farmersoplenty.registry.ExternalItems;
+import com.farmersoplenty.registry.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
+import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
+import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
+import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -18,22 +28,54 @@ import java.util.concurrent.CompletableFuture;
  */
 public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
 
+    // Konstantins
+    public static final int FAST_COOKING = 100;      // 5 seconds
+    public static final int NORMAL_COOKING = 200;    // 10 seconds
+    public static final int SLOW_COOKING = 400;      // 20 seconds
+
+    public static final float SMALL_EXP = 0.35F;
+    public static final float MEDIUM_EXP = 1.0F;
+    public static final float LARGE_EXP = 2.0F;
+
+
     public RecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries);
     }
 
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
-        // Step 4 example (Cutting Board):
-        // CuttingBoardRecipeBuilder.cuttingRecipe(
-        //         Ingredient.of(BopItems.ingredient("cattail")),
-        //         Ingredient.of(Tags.Items.TOOLS_KNIVES_or_FD_knife_tag),
-        //         ModItems.CHOPPED_CATTAIL.get())
-        //     .build(recipeOutput);
-        //
-        // Step 4 example (Cooking Pot):
-        // CookingPotRecipeBuilder.cookingPotRecipe(ModItems.CATTAIL_RICE_SOUP.get(), 1, 200, 0.0f, Items.BOWL)
-        //     .addIngredient(...).addIngredient(...).addIngredient(...)
-        //     .build(recipeOutput);
+        // ==================================================
+        // Cutting Board Recipes
+        // ==================================================
+        CuttingBoardRecipeBuilder
+                .cuttingRecipe(
+                        Ingredient.of(ExternalItems.bop("cattail")),        // Input
+                        Ingredient.of(ExternalItems.KNIVES),                     // Tool
+                        ModItems.CHOPPED_CATTAIL.get(),                          // Output
+                        2                                                        // Output Amount
+                )
+                .setNamespace(FarmersOPlenty.MODID) // input is a BOP item, so force OUR namespace on the recipe id
+                .save(recipeOutput);
+
+        // ==================================================
+        // Cooking Pot Recipes
+        // ==================================================
+
+        // Cattail Rice Soup
+        Item cattail = ExternalItems.bop("cattail");
+
+        mealCreator(ModItems.CATTAIL_RICE_SOUP.get(), NORMAL_COOKING, MEDIUM_EXP)
+                .addIngredient(Ingredient.of(cattail, ModItems.CHOPPED_CATTAIL.get()))
+                .addIngredient(ExternalItems.fd("rice"))
+                .addIngredient(ExternalItems.fd("onion"))
+                .unlockedByItems("has_cattail", cattail).save(recipeOutput);
+    }
+
+    // ----------- Helper Functions ---------
+
+    private static CookingPotRecipeBuilder mealCreator(ItemLike result, int cookingTime, float xp){
+        return CookingPotRecipeBuilder
+                .cookingPotRecipe(result, 1, cookingTime, xp, Items.BOWL)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS);
     }
 }

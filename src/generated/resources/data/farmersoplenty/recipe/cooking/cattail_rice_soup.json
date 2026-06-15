@@ -1,0 +1,32 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "biomesoplenty:cattail"
+        },
+        {
+          "item": "farmersoplenty:chopped_cattail"
+        }
+      ]
+    },
+    {
+      "item": "farmersdelight:rice"
+    },
+    {
+      "item": "farmersdelight:onion"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "farmersoplenty:cattail_rice_soup"
+  }
+}
