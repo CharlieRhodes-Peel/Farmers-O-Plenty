@@ -18,7 +18,7 @@ All should be tagged with **Cabinets**
 - [x] Palm Cabinet
 - [x] Willow Cabinet
 - [x] Dead Cabinet
-- [ ] Magic Cabinet
+- [x] Magic Cabinet
 - [x] Umbran Cabinet
 - [ ] Hellbark Cabinet
 - [ ] Empyreal Cabinet
