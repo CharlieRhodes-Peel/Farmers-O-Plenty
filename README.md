@@ -11,7 +11,7 @@ All should be tagged with **Cabinets**
 
 - [ ] Fir Cabinet
 - [x] Pine Cabinet
-- [ ] Maple Cabinet
+- [x] Maple Cabinet
 - [x] Redwood Cabinet
 - [x] Mahogany Cabinet
 - [ ] Jacaranda Cabinet
