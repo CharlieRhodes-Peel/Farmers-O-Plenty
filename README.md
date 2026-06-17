@@ -10,12 +10,12 @@ New **Cabinets** for all types of wood Biomes O' Plenty Adds: (12)
 All should be tagged with **Cabinets**
 
 - [ ] Fir Cabinet
-- [ ] Pine Cabinet
+- [x] Pine Cabinet
 - [ ] Maple Cabinet
-- [ ] Redwood Cabinet
+- [x] Redwood Cabinet
 - [ ] Mahogany Cabinet
 - [ ] Jacaranda Cabinet
-- [ ] Palm Cabinet
+- [x] Palm Cabinet
 - [x] Willow Cabinet
 - [x] Dead Cabinet
 - [ ] Magic Cabinet
