@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "cabinet",
+  "key": {
+    "D": {
+      "item": "biomesoplenty:mahogany_trapdoor"
+    },
+    "S": {
+      "item": "biomesoplenty:mahogany_slab"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "D D",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersoplenty:mahogany_cabinet"
+  }
+}

@@ -13,7 +13,7 @@ All should be tagged with **Cabinets**
 - [x] Pine Cabinet
 - [ ] Maple Cabinet
 - [x] Redwood Cabinet
-- [ ] Mahogany Cabinet
+- [x] Mahogany Cabinet
 - [ ] Jacaranda Cabinet
 - [x] Palm Cabinet
 - [x] Willow Cabinet
