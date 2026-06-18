@@ -43,6 +43,7 @@ public final class ModBlocks {
     public static final DeferredBlock<CabinetBlock> MAGIC_CABINET = cabinet("magic_cabinet");
     public static final DeferredBlock<CabinetBlock> JACARANDA_CABINET = cabinet("jacaranda_cabinet");
     public static final DeferredBlock<CabinetBlock> HELLBARK_CABINET = cabinet("hellbark_cabinet");
+    public static final DeferredBlock<CabinetBlock> EMPYREAL_CABINET = cabinet("empyreal_cabinet");
 
     /** Registers a cabinet block, records it, and registers its BlockItem (via ModItems). */
     private static DeferredBlock<CabinetBlock> cabinet(String name) {

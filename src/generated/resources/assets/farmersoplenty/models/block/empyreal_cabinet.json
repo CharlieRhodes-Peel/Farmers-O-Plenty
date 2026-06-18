@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "farmersoplenty:block/empyreal_cabinet_front",
+    "side": "farmersoplenty:block/empyreal_cabinet_side",
+    "top": "farmersoplenty:block/empyreal_cabinet_top"
+  }
+}

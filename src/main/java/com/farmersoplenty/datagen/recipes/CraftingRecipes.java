@@ -28,6 +28,7 @@ public final class CraftingRecipes {
         cabinet(output, ModBlocks.MAGIC_CABINET.get(), "magic");
         cabinet(output, ModBlocks.JACARANDA_CABINET.get(), "jacaranda");
         cabinet(output, ModBlocks.HELLBARK_CABINET.get(), "hellbark");
+        cabinet(output, ModBlocks.EMPYREAL_CABINET.get(), "empyreal");
     }
 
     private static void cabinet(RecipeOutput output, ItemLike result, String bopWood) {
