@@ -10,6 +10,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +41,8 @@ public final class ModBlocks {
     public static final DeferredBlock<CabinetBlock> MAPLE_CABINET = cabinet("maple_cabinet");
     public static final DeferredBlock<CabinetBlock> MAHOGANY_CABINET = cabinet("mahogany_cabinet");
     public static final DeferredBlock<CabinetBlock> MAGIC_CABINET = cabinet("magic_cabinet");
+    public static final DeferredBlock<CabinetBlock> JACARANDA_CABINET = cabinet("jacaranda_cabinet");
+    public static final DeferredBlock<CabinetBlock> HELLBARK_CABINET = cabinet("hellbark_cabinet");
 
     /** Registers a cabinet block, records it, and registers its BlockItem (via ModItems). */
     private static DeferredBlock<CabinetBlock> cabinet(String name) {

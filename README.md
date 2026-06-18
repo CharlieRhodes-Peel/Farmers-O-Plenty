@@ -14,13 +14,13 @@ All should be tagged with **Cabinets**
 - [x] Maple Cabinet
 - [x] Redwood Cabinet
 - [x] Mahogany Cabinet
-- [ ] Jacaranda Cabinet
+- [x] Jacaranda Cabinet
 - [x] Palm Cabinet
 - [x] Willow Cabinet
 - [x] Dead Cabinet
 - [x] Magic Cabinet
 - [x] Umbran Cabinet
-- [ ] Hellbark Cabinet
+- [x] Hellbark Cabinet
 - [ ] Empyreal Cabinet
 ### New dishes:
 All of these should be tagged with **Meals**

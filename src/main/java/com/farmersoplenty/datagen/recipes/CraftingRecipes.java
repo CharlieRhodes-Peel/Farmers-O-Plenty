@@ -26,6 +26,8 @@ public final class CraftingRecipes {
         cabinet(output, ModBlocks.MAPLE_CABINET.get(), "maple");
         cabinet(output, ModBlocks.MAHOGANY_CABINET.get(), "mahogany");
         cabinet(output, ModBlocks.MAGIC_CABINET.get(), "magic");
+        cabinet(output, ModBlocks.JACARANDA_CABINET.get(), "jacaranda");
+        cabinet(output, ModBlocks.HELLBARK_CABINET.get(), "hellbark");
     }
 
     private static void cabinet(RecipeOutput output, ItemLike result, String bopWood) {
