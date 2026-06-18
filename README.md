@@ -9,7 +9,7 @@ Alright lets just map out my brain and see what needs to be done:
 New **Cabinets** for all types of wood Biomes O' Plenty Adds: (12)
 All should be tagged with **Cabinets**
 
-- [ ] Fir Cabinet
+- [x] Fir Cabinet
 - [x] Pine Cabinet
 - [x] Maple Cabinet
 - [x] Redwood Cabinet
@@ -21,7 +21,7 @@ All should be tagged with **Cabinets**
 - [x] Magic Cabinet
 - [x] Umbran Cabinet
 - [x] Hellbark Cabinet
-- [ ] Empyreal Cabinet
+- [x] Empyreal Cabinet
 ### New dishes:
 All of these should be tagged with **Meals**
 
@@ -47,10 +47,10 @@ All can be tagged with **Animal Foods**
 ### New Others
 
 | Name                 | Ingredients                                                              | Effect            | Tags             | Notes                               |
-| -------------------- | ------------------------------------------------------------------------ | ----------------- | ---------------- | ----------------------------------- |
+| -------------------- | ------------------------------------------------------------------------ | ----------------- | ---------------- |-------------------------------------|
 | Beer                 | 2xBarley + Wheat + Sugar \| Served in Glass Bottle                       | Absorption (1:00) | Drinks           | Should take a long time to make     |
 | Glow Glow Juice      | 2x Glow Berry + Glowflower Berry + Sugar + Ice \| Served In Glass Bottle | Glowing (1:00)    | Drinks           | Should look like Glow Berry Custard |
-| Honey Flapjacks      | 2xCrushed Oats + Honey Bottle + Sugar (CRAFTING NOT COOKING)             | Eat               | Cookies / Sweets |                                     |
+| Honey Flapjacks      | 2xCrushed Oats + Honey Bottle + Sugar (CRAFTING NOT COOKING)             | Eat               | Cookies / Sweets | Should get multiple (min 3)         |
 | Clover Blossom Salad | Clover + Cabbage Foods + Beetroot + Glowflower Berry                     | Reg (0:10)        | Meals            |                                     |
 
 

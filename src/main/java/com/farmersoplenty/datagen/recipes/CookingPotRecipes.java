@@ -36,6 +36,14 @@ public final class CookingPotRecipes {
                 .addIngredient(ExternalItems.fd("onion"))
                 .unlockedByItems("has_cattail", cattail)
                 .save(output);
+
+        // Lavender Honey Icecream
+        drinkCreator(ModItems.LAVENDER_HONEY_ICECREAM.get(), FAST_COOKING, SMALL_EXP)
+                .addIngredient(ExternalItems.bop("lavender"))
+                .addIngredient(Ingredient.of(Items.HONEY_BOTTLE))
+                .addIngredient(ExternalItems.fd("milk_bottle"))
+                .addIngredient(Ingredient.of(Items.ICE))
+                .save(output);
     }
 
     // -------------------------------------------------------------------------
@@ -47,5 +55,11 @@ public final class CookingPotRecipes {
         return CookingPotRecipeBuilder
                 .cookingPotRecipe(result, 1, cookingTime, xp, Items.BOWL)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS);
+    }
+
+    private static CookingPotRecipeBuilder drinkCreator(ItemLike result, int cookingTime, float xp){
+        return CookingPotRecipeBuilder
+                .cookingPotRecipe(result, 1, cookingTime, xp)
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS);
     }
 }

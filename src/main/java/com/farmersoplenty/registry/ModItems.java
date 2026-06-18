@@ -65,6 +65,12 @@ public final class ModItems {
             ModTags.Items.SOUPS
     );
 
+    // Bottled
+    public static final DeferredItem<Item> LAVENDER_HONEY_ICECREAM = drink("lavender_honey_icecream",
+            foodStats(8, 3f, Items.GLASS_BOTTLE, createEffect(ModEffects.NOURISHMENT, 3)),
+            ModTags.Items.MEALS,
+            ModTags.Items.DRINKS);
+
     // =====================================================================================
     //  HELPERS
     // =====================================================================================
@@ -80,6 +86,14 @@ public final class ModItems {
     public static DeferredItem<Item> food(String name, FoodProperties food, TagKey<Item>... extraTags) {
         DeferredItem<Item> item = register(name,
                 props -> new EffectTooltipItem(props.food(food)), extraTags);
+        addTag(ModTags.Items.FOOD, item);
+        return item;
+    }
+
+    @SafeVarargs
+    public static DeferredItem<Item> drink(String name, FoodProperties drink, TagKey<Item>... extraTags){
+        DeferredItem<Item> item = register(name,
+                props -> new EffectTooltipItem(props.food(drink)), extraTags);
         addTag(ModTags.Items.FOOD, item);
         return item;
     }

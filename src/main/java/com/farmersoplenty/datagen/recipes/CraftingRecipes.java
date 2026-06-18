@@ -17,19 +17,37 @@ public final class CraftingRecipes {
 
     public static void register(RecipeOutput output) {
         cabinet(output, ModBlocks.FIR_CABINET.get(), "fir");
+        cabinet(output, ModBlocks.PINE_CABINET.get(), "pine");
+        cabinet(output, ModBlocks.MAPLE_CABINET.get(), "maple");
+        cabinet(output, ModBlocks.REDWOOD_CABINET.get(), "redwood");
+        cabinet(output, ModBlocks.MAHOGANY_CABINET.get(), "mahogany");
+        cabinet(output, ModBlocks.JACARANDA_CABINET.get(), "jacaranda");
+        cabinet(output, ModBlocks.PALM_CABINET.get(), "palm");
         cabinet(output, ModBlocks.WILLOW_CABINET.get(), "willow");
         cabinet(output, ModBlocks.DEAD_CABINET.get(), "dead");
-        cabinet(output, ModBlocks.UMBRAN_CABINET.get(), "umbran");
-        cabinet(output, ModBlocks.REDWOOD_CABINET.get(), "redwood");
-        cabinet(output, ModBlocks.PINE_CABINET.get(), "pine");
-        cabinet(output, ModBlocks.PALM_CABINET.get(), "palm");
-        cabinet(output, ModBlocks.MAPLE_CABINET.get(), "maple");
-        cabinet(output, ModBlocks.MAHOGANY_CABINET.get(), "mahogany");
         cabinet(output, ModBlocks.MAGIC_CABINET.get(), "magic");
-        cabinet(output, ModBlocks.JACARANDA_CABINET.get(), "jacaranda");
+        cabinet(output, ModBlocks.UMBRAN_CABINET.get(), "umbran");
         cabinet(output, ModBlocks.HELLBARK_CABINET.get(), "hellbark");
         cabinet(output, ModBlocks.EMPYREAL_CABINET.get(), "empyreal");
     }
+
+    /*
+    BoP Wood Order:
+    Fir
+    Pine
+    Maple
+    Redwood
+    Mahogany
+    Jacaranda
+    Palm
+    Willow
+    Dead
+    Magic
+    Umbran
+    Hellbark
+    Empyreal
+     */
+
 
     private static void cabinet(RecipeOutput output, ItemLike result, String bopWood) {
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, result)
