@@ -1,19 +1,23 @@
 {
   "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
   "cookingtime": 100,
   "experience": 0.35,
   "ingredients": [
     {
-      "item": "biomesoplenty:lavender"
+      "tag": "farmersoplenty:lavender"
     },
     {
-      "item": "minecraft:honey_bottle"
+      "tag": "farmersoplenty:honey"
     },
     {
       "item": "farmersdelight:milk_bottle"
     },
     {
-      "item": "minecraft:ice"
+      "item": "farmersoplenty:ice_cubes"
     }
   ],
   "recipe_book_tab": "drinks",

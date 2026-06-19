@@ -1,6 +1,23 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_any_ingredient": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:lavender",
+              "biomesoplenty:white_lavender",
+              "minecraft:ice",
+              "minecraft:honey_bottle",
+              "minecraft:honeycomb",
+              "farmersdelight:milk_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "farmersoplenty:cooking/lavender_honey_icecream"
@@ -10,7 +27,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_any_ingredient"
     ]
   ],
   "rewards": {

@@ -6,6 +6,7 @@ import com.farmersoplenty.registry.ModItems;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
@@ -29,6 +30,11 @@ public final class CuttingBoardRecipes {
                 ExternalItems.KNIVES,
                 2
         ).save(output);
+
+        // Any ice -> Ice cubes
+        IceCubeFrom(Items.ICE, 2).save(output);
+        IceCubeFrom(Items.PACKED_ICE, 9 * 2).save(output);
+        IceCubeFrom(Items.BLUE_ICE, 9 * 4).save(output);
     }
 
     // -------------------------------------------------------------------------
@@ -44,6 +50,11 @@ public final class CuttingBoardRecipes {
                     amount
         )
                 .setNamespace(FarmersOPlenty.MODID);
+    }
+
+    //Helpful wrapper so I don't have to write much for different Ice types
+    private static CuttingBoardRecipeBuilder IceCubeFrom(ItemLike input, int amount){
+        return Chopping(input, ModItems.ICE_CUBES.get(), ExternalItems.KNIVES, amount);
     }
 
 }

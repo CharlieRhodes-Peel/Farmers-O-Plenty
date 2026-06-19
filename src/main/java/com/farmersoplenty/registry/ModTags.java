@@ -16,23 +16,32 @@ public final class ModTags {
     private ModTags() {}
 
     public static final class Items {
-        public static final TagKey<Item> FOOD = tag("food");
-        public static final TagKey<Item> MEALS = tag("meals");
-        public static final TagKey<Item> SOUPS = tag("soups");
-        public static final TagKey<Item> DRINKS = tag("drinks");
-        public static final TagKey<Item> ANIMAL_FOODS = tag("animal_foods");
-        public static final TagKey<Item> CABINETS = tag("cabinets");
+        public static final TagKey<Item> FOOD = cTag("foods");
+        public static final TagKey<Item> MEALS = modTag("meals");
+        public static final TagKey<Item> SOUPS = modTag("soups");
+        public static final TagKey<Item> DRINKS = cTag("drinks");
+        public static final TagKey<Item> ANIMAL_FOODS = modTag("animal_foods");
+        public static final TagKey<Item> CABINETS = modTag("cabinets");
 
-        private static TagKey<Item> tag(String path) {
+        //Stuff for Cooking pot / Crafting
+        public static final TagKey<Item> LAVENDER = modTag("lavender");
+        public static final TagKey<Item> HONEY = modTag("honey");
+
+        private static TagKey<Item> modTag(String path) {
             return TagKey.create(Registries.ITEM,
                     ResourceLocation.fromNamespaceAndPath(FarmersOPlenty.MODID, path));
+        }
+
+        private static TagKey<Item> cTag(String path) {
+            return TagKey.create(Registries.ITEM,
+                    ResourceLocation.fromNamespaceAndPath("c", path));
         }
     }
 
     public static final class Blocks {
-        public static final TagKey<Block> CABINETS = tag("cabinets");
+        public static final TagKey<Block> CABINETS = modTag("cabinets");
 
-        private static TagKey<Block> tag(String path) {
+        private static TagKey<Block> modTag(String path) {
             return TagKey.create(Registries.BLOCK,
                     ResourceLocation.fromNamespaceAndPath(FarmersOPlenty.MODID, path));
         }

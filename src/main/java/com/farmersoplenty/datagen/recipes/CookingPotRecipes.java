@@ -1,8 +1,15 @@
 package com.farmersoplenty.datagen.recipes;
 
+import com.farmersoplenty.FarmersOPlenty;
 import com.farmersoplenty.registry.ExternalItems;
 import com.farmersoplenty.registry.ModItems;
+import com.farmersoplenty.registry.ModTags;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -38,11 +45,14 @@ public final class CookingPotRecipes {
                 .save(output);
 
         // Lavender Honey Icecream
+        Item milkBottle = ExternalItems.fd("milk_bottle");
+
         drinkCreator(ModItems.LAVENDER_HONEY_ICECREAM.get(), FAST_COOKING, SMALL_EXP)
-                .addIngredient(ExternalItems.bop("lavender"))
-                .addIngredient(Ingredient.of(Items.HONEY_BOTTLE))
-                .addIngredient(ExternalItems.fd("milk_bottle"))
-                .addIngredient(Ingredient.of(Items.ICE))
+                .addIngredient(ModTags.Items.LAVENDER)
+                .addIngredient(ModTags.Items.HONEY)
+                .addIngredient(milkBottle)
+                .addIngredient(ModItems.ICE_CUBES)
+                .unlockedByAnyIngredient(ExternalItems.bop("lavender"), ExternalItems.bop("white_lavender"), Items.ICE, Items.HONEY_BOTTLE, Items.HONEYCOMB, milkBottle)
                 .save(output);
     }
 
@@ -59,7 +69,7 @@ public final class CookingPotRecipes {
 
     private static CookingPotRecipeBuilder drinkCreator(ItemLike result, int cookingTime, float xp){
         return CookingPotRecipeBuilder
-                .cookingPotRecipe(result, 1, cookingTime, xp)
+                .cookingPotRecipe(result, 1, cookingTime, xp, Items.GLASS_BOTTLE)
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS);
     }
 }

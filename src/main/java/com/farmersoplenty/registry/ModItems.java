@@ -56,6 +56,7 @@ public final class ModItems {
 
     // ------- Ingredients ------
     public static final DeferredItem<Item> CHOPPED_CATTAIL = animalFood("chopped_cattail");
+    public static final DeferredItem<Item> ICE_CUBES = item("ice_cubes");
 
     // -------- Dishes -------
     // Soups
@@ -68,7 +69,6 @@ public final class ModItems {
     // Bottled
     public static final DeferredItem<Item> LAVENDER_HONEY_ICECREAM = drink("lavender_honey_icecream",
             foodStats(8, 3f, Items.GLASS_BOTTLE, createEffect(ModEffects.NOURISHMENT, 3)),
-            ModTags.Items.MEALS,
             ModTags.Items.DRINKS);
 
     // =====================================================================================
