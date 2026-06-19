@@ -38,13 +38,13 @@ All of these should be tagged with **Meals**
 ### New items:
 All can be tagged with **Animal Foods**
 
-| Name             | From                | Tags | Notes                             |
-| ---------------- | ------------------- | ---- |-----------------------------------|
-| Chopped Cattail  | Chopping Cattail    |      | N/A                               |
-| Crushed Oats     | Chopping Sea Oats   |      | N/A                               |
-| Waterlily Stem   | Chopping Waterlily  |      | N/A                               |
+| Name             | From                | Tags | Notes                            |
+| ---------------- | ------------------- | ---- |----------------------------------|
+| Chopped Cattail  | Chopping Cattail    |      | N/A                              |
+| Crushed Oats     | Chopping Sea Oats   |      | N/A                              |
+| Waterlily Stem   | Chopping Waterlily  |      | N/A                              |
 | Glowflower Berry | Chopping Glowflower |      | Could be placeable like glowberry 
-| Ice Cubes        | Chopping ANY Ice    |      | N/A                               |
+| Ice Cubes        | Chopping ANY Ice    |      | Is NOT an animal food            |
 ### New Others
 
 | Name                 | Ingredients                                                              | Effect            | Tags             | Notes                               |

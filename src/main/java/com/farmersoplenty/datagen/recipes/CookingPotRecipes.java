@@ -34,6 +34,8 @@ public final class CookingPotRecipes {
     // -------------------------------------------------------------------------
 
     public static void register(RecipeOutput output) {
+        // MEALS
+
         // Cattail Rice Soup
         Item cattail = ExternalItems.bop("cattail");
 
@@ -44,6 +46,8 @@ public final class CookingPotRecipes {
                 .unlockedByItems("has_cattail", cattail)
                 .save(output);
 
+        // DRINKS
+
         // Lavender Honey Icecream
         Item milkBottle = ExternalItems.fd("milk_bottle");
 
@@ -53,6 +57,17 @@ public final class CookingPotRecipes {
                 .addIngredient(milkBottle)
                 .addIngredient(ModItems.ICE_CUBES)
                 .unlockedByAnyIngredient(ExternalItems.bop("lavender"), ExternalItems.bop("white_lavender"), Items.ICE, Items.HONEY_BOTTLE, Items.HONEYCOMB, milkBottle)
+                .save(output);
+
+
+        //Beer
+        Item barely = ExternalItems.bop("barley");
+        drinkCreator(ModItems.BEER.get(), SLOW_COOKING, LARGE_EXP)
+                .addIngredient(barely)
+                .addIngredient(barely)
+                .addIngredient(Ingredient.of(Items.WHEAT))
+                .addIngredient(Ingredient.of(Items.SUGAR))
+                .unlockedByAnyIngredient(barely)
                 .save(output);
     }
 

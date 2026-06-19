@@ -6,6 +6,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -16,6 +17,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import java.util.ArrayList;
@@ -67,8 +69,13 @@ public final class ModItems {
     );
 
     // Bottled
-    public static final DeferredItem<Item> LAVENDER_HONEY_ICECREAM = drink("lavender_honey_icecream",
+    public static final DeferredItem<Item> LAVENDER_HONEY_ICECREAM = food("lavender_honey_icecream",
             foodStats(8, 3f, Items.GLASS_BOTTLE, createEffect(ModEffects.NOURISHMENT, 3)),
+            ModTags.Items.DRINKS);
+
+    // ----------- Misc --------
+    public static final DeferredItem<Item> BEER = drink("beer",
+            drinkStats(4, 3f, Items.GLASS_BOTTLE, createEffect(MobEffects.ABSORPTION, 1)),
             ModTags.Items.DRINKS);
 
     // =====================================================================================
@@ -93,8 +100,9 @@ public final class ModItems {
     @SafeVarargs
     public static DeferredItem<Item> drink(String name, FoodProperties drink, TagKey<Item>... extraTags){
         DeferredItem<Item> item = register(name,
-                props -> new EffectTooltipItem(props.food(drink)), extraTags);
+                props -> new DrinkItem(props.food(drink)), extraTags);
         addTag(ModTags.Items.FOOD, item);
+        addTag(ModTags.Items.DRINKS, item);
         return item;
     }
 
@@ -127,6 +135,17 @@ public final class ModItems {
                 .saturationModifier(saturation)
                 .usingConvertsTo(container)
                 .effect(potionEffect, 1.0f)
+                .build();
+    }
+
+    //Same as food stats but allows it to be drunk even when hunger is full
+    public static FoodProperties drinkStats(int nutrition, float saturation, ItemLike container, Supplier<MobEffectInstance> potionEffect){
+        return new FoodProperties.Builder()
+                .nutrition(nutrition)
+                .saturationModifier(saturation)
+                .usingConvertsTo(container)
+                .effect(potionEffect, 1.0f)
+                .alwaysEdible()
                 .build();
     }
 
