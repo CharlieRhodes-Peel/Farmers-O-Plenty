@@ -85,6 +85,9 @@ public final class ModItems {
             drinkStats(4, 3f, Items.GLASS_BOTTLE, createEffect(MobEffects.ABSORPTION, 1)),
             ModTags.Items.DRINKS);
 
+    public static final DeferredItem<Item> HONEY_FLAPJACK = food("honey_flapjack",
+            foodStats(6, 3f));
+
     // =====================================================================================
     //  HELPERS
     // =====================================================================================
