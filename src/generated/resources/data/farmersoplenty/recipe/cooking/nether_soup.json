@@ -16,15 +16,7 @@
       "item": "farmersdelight:nether_salad"
     },
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "minecraft:crimson_fungus"
-        },
-        {
-          "item": "minecraft:warped_fungus"
-        }
-      ]
+      "item": "biomesoplenty:blood_bucket"
     }
   ],
   "recipe_book_tab": "meals",

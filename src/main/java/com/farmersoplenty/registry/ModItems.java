@@ -60,6 +60,7 @@ public final class ModItems {
     // ------- Ingredients ------
     public static final DeferredItem<Item> CHOPPED_CATTAIL = animalFood("chopped_cattail");
     public static final DeferredItem<Item> ICE_CUBES = item("ice_cubes");
+    public static final DeferredItem<Item> CRUSHED_OATS = item("crushed_oats");
 
     // -------- Dishes -------
     // Soups

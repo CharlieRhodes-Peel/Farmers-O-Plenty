@@ -51,7 +51,7 @@ public final class CookingPotRecipes {
                 .addIngredient(ExternalItems.bop("bramble"))
                 .addIngredient(ExternalItems.bop("eyebulb"))
                 .addIngredient(ExternalItems.fd("nether_salad"))
-                .addIngredient(Ingredient.of(Items.CRIMSON_FUNGUS, Items.WARPED_FUNGUS))
+                .addIngredient(ExternalItems.bop("blood_bucket"))
                 .unlockedByAnyIngredient(ExternalItems.bop("bramble"), ExternalItems.bop("eyebulb"))
                 .save(output);
 

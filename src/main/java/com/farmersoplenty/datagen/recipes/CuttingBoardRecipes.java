@@ -35,6 +35,14 @@ public final class CuttingBoardRecipes {
         IceCubeFrom(Items.ICE, 2).save(output);
         IceCubeFrom(Items.PACKED_ICE, 9 * 2).save(output);
         IceCubeFrom(Items.BLUE_ICE, 9 * 4).save(output);
+
+        //Crushed oats
+        Chopping(
+                ExternalItems.bop("sea_oats"),
+                ModItems.CRUSHED_OATS.get(),
+                ExternalItems.KNIVES,
+                2
+        ).save(output);
     }
 
     // -------------------------------------------------------------------------
