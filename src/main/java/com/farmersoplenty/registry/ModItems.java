@@ -14,6 +14,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -67,6 +68,11 @@ public final class ModItems {
             ModTags.Items.MEALS,
             ModTags.Items.SOUPS
     );
+
+    public static final DeferredItem<Item> NETHER_SOUP = food("nether_soup",
+            foodStats(9, 3f, Items.BOWL, createEffect(ModEffects.NOURISHMENT, 5)),
+            ModTags.Items.MEALS,
+            ModTags.Items.SOUPS);
 
     // Bottled
     public static final DeferredItem<Item> LAVENDER_HONEY_ICECREAM = food("lavender_honey_icecream",

@@ -34,8 +34,9 @@ public final class CookingPotRecipes {
     // -------------------------------------------------------------------------
 
     public static void register(RecipeOutput output) {
-        // MEALS
+        // ---------- MEALS ----------
 
+        // Soups
         // Cattail Rice Soup
         Item cattail = ExternalItems.bop("cattail");
 
@@ -44,6 +45,14 @@ public final class CookingPotRecipes {
                 .addIngredient(ExternalItems.fd("rice"))
                 .addIngredient(ExternalItems.fd("onion"))
                 .unlockedByItems("has_cattail", cattail)
+                .save(output);
+
+        mealCreator(ModItems.NETHER_SOUP.get(), NORMAL_COOKING, MEDIUM_EXP)
+                .addIngredient(ExternalItems.bop("bramble"))
+                .addIngredient(ExternalItems.bop("eyebulb"))
+                .addIngredient(ExternalItems.fd("nether_salad"))
+                .addIngredient(Ingredient.of(Items.CRIMSON_FUNGUS, Items.WARPED_FUNGUS))
+                .unlockedByAnyIngredient(ExternalItems.bop("bramble"), ExternalItems.bop("eyebulb"))
                 .save(output);
 
         // DRINKS

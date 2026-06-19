@@ -25,26 +25,28 @@ All should be tagged with **Cabinets**
 ### New dishes:
 All of these should be tagged with **Meals**
 
-| Dish Name                | Ingredients                                 | Nourishment | Tags  | Notes             |
-| ------------------------ | ------------------------------------------- | ----------- | ----- | ----------------- |
-| Cattail Rice Soup        | Cattail/Chopped Cattail + Rice + Onion      | 1           | Soups | N/A               |
-| Lavender Honey Ice Cream | Lavender + Honey Bottle + Milk Bottle + Ice | 3           |       | N/A               |
-| Nether Soup              | Bramble + Eyebulb + Blaze Powder            | 5           | Soups | MayB fire res?    |
-| Berry Oat Bakewell       | Glow Berry + Sweet Berry + Crushed Oats     | 3           |       | N/A               |
-| Pork and Cactus Rice     | Raw Pork/Bacon + Cactus/Tiny Cactus + Rice  | 3           |       | N/A               |
-| Waterlily Mix            | Salmon + Onion + Waterlily Stem + Potato    | 5           |       | needs better name |
-| Soup of Ender            | Eye of Ender + 2xChorus Fruit + Lumaloop    | 3           | Soups | MayB Levatating?  |
+| Dish Name                | Ingredients                                     | Nourishment | Tags  | Notes             |
+| ------------------------ |-------------------------------------------------| ----------- | ----- | ----------------- |
+| Cattail Rice Soup        | Cattail/Chopped Cattail + Rice + Onion          | 1           | Soups | N/A               |
+| Lavender Honey Ice Cream | Lavender + Honey Bottle + Milk Bottle + Ice     | 3           |       | N/A               |
+| Nether Soup              | Bramble + Eyebulb + Blaze Powder + Nether Salad | 5           | Soups | MayB fire res?    |
+| Berry Oat Bakewell       | Glow Berry + Sweet Berry + Crushed Oats         | 3           |       | N/A               |
+| Pork and Cactus Rice     | Raw Pork/Bacon + Cactus/Tiny Cactus + Rice      | 3           |       | N/A               |
+| Waterlily Mix            | Salmon + Onion + Waterlily Stem + Potato        | 5           |       | needs better name |
+| Soup of Ender            | Eye of Ender + 2xChorus Fruit + Lumaloop        | 3           | Soups | MayB Levatating?  |
 
 ### New items:
 All can be tagged with **Animal Foods**
 
-| Name             | From                | Tags | Notes                            |
-| ---------------- | ------------------- | ---- |----------------------------------|
-| Chopped Cattail  | Chopping Cattail    |      | N/A                              |
-| Crushed Oats     | Chopping Sea Oats   |      | N/A                              |
-| Waterlily Stem   | Chopping Waterlily  |      | N/A                              |
-| Glowflower Berry | Chopping Glowflower |      | Could be placeable like glowberry 
-| Ice Cubes        | Chopping ANY Ice    |      | Is NOT an animal food            |
+| Name             | From                | Tags | Notes                             |
+|------------------| ------------------- |------|-----------------------------------|
+| Chopped Cattail  | Chopping Cattail    |      | N/A                               |
+| Crushed Oats     | Chopping Sea Oats   |      | N/A                               |
+| Waterlily Stem   | Chopping Waterlily  |      | N/A                               |
+| Glowflower Berry | Chopping Glowflower |      | Could be placeable like glowberry |
+| Ice Cubes        | Chopping ANY Ice    |      | Is NOT an animal food             |
+| Barley Seeds     | Crafting Barely / Hitting it barehand |      |                                   |
+
 ### New Others
 
 | Name                 | Ingredients                                                              | Effect            | Tags             | Notes                               |
@@ -54,6 +56,8 @@ All can be tagged with **Animal Foods**
 | Honey Flapjacks      | 2xCrushed Oats + Honey Bottle + Sugar (CRAFTING NOT COOKING)             | Eat               | Cookies / Sweets | Should get multiple (min 3)         |
 | Clover Blossom Salad | Clover + Cabbage Foods + Beetroot + Glowflower Berry                     | Reg (0:10)        | Meals            |                                     |
 
+
+Also want to add a Barley CROP, which will be another huge undertaking on the backend (sir another scope creep has hit the codebase)
 
 # ----------- Possible Biomes O' Plenty Items for Food -----------
 Listed in order of what I think would be good
