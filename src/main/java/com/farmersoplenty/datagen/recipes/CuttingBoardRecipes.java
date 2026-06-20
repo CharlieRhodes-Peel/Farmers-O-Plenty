@@ -43,6 +43,14 @@ public final class CuttingBoardRecipes {
                 ExternalItems.KNIVES,
                 2
         ).save(output);
+
+        //Waterlily stems
+        Chopping(
+                ExternalItems.bop("waterlily"),
+                ModItems.WATERLILY_STEMS.get(),
+                ExternalItems.KNIVES,
+                2
+        ).save(output);
     }
 
     // -------------------------------------------------------------------------

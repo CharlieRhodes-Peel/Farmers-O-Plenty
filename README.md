@@ -58,6 +58,8 @@ All can be tagged with **Animal Foods**
 
 
 Also want to add a Barley CROP, which will be another huge undertaking on the backend (sir another scope creep has hit the codebase)
+Bonemealing Waterlily should make more waterlily's
+
 
 # ----------- Possible Biomes O' Plenty Items for Food -----------
 Listed in order of what I think would be good

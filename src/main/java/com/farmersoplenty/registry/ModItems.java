@@ -14,11 +14,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import java.util.ArrayList;
@@ -61,6 +59,7 @@ public final class ModItems {
     public static final DeferredItem<Item> CHOPPED_CATTAIL = animalFood("chopped_cattail");
     public static final DeferredItem<Item> ICE_CUBES = item("ice_cubes");
     public static final DeferredItem<Item> CRUSHED_OATS = item("crushed_oats");
+    public static final DeferredItem<Item> WATERLILY_STEMS = item("waterlily_stems");
 
     // -------- Dishes -------
     // Soups
