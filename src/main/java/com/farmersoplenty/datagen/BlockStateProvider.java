@@ -6,6 +6,8 @@ import com.farmersoplenty.datagen.ModBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
@@ -29,8 +31,18 @@ public class BlockStateProvider extends net.neoforged.neoforge.client.model.gene
         simpleBlockItem(block, closed);
     }
 
+    private void cropBlock(CropBlock crop) {
+        String n = BuiltInRegistries.BLOCK.getKey(crop).getPath();
+        getVariantBuilder(crop).forAllStates(state -> ConfiguredModel.builder()
+                .modelFile(models().crop(n + "_stage" + state.getValue(CropBlock.AGE),
+                                modLoc("block/" + n + "_stage" + state.getValue(CropBlock.AGE)))
+                        .renderType("cutout"))
+                .build());
+    }
+
     @Override
     protected void registerStatesAndModels() {
         ModBlocks.CABINETS.forEach(c -> cabinetBlock(c.get()));
+        ModBlocks.CROPS.forEach(c -> cropBlock(c.get()));
     }
 }

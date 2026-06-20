@@ -10,9 +10,11 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DragonEggBlock;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -171,6 +173,13 @@ public final class ModItems {
 
     public static DeferredItem<BlockItem> blockItem(DeferredBlock<? extends Block> block){
         DeferredItem<BlockItem> item = ITEMS.registerSimpleBlockItem(block);
+        ENTRIES.add(item);
+        return item;
+    }
+
+    public static DeferredItem<Item> seedItem(String name, DeferredBlock<? extends Block> crop) {
+        Supplier<Item> sup = () -> new ItemNameBlockItem(crop.get(), new Item.Properties());
+        DeferredItem<Item> item = ITEMS.register(name, sup);
         ENTRIES.add(item);
         return item;
     }

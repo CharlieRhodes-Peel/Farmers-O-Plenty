@@ -3,6 +3,7 @@ package com.farmersoplenty;
 import com.farmersoplenty.datagen.ModBlocks;
 import com.farmersoplenty.registry.ModCreativeTabs;
 import com.farmersoplenty.registry.ModItems;
+import com.farmersoplenty.registry.ModLootModifiers;
 import com.mojang.logging.LogUtils;
 
 import net.neoforged.bus.api.IEventBus;
@@ -21,6 +22,7 @@ public class FarmersOPlenty {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
 
         // Optional config. If you don't need config, delete this line, Config.java,
         // and the config-screen line in FarmersOPlentyClient.

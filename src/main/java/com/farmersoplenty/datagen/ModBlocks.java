@@ -2,17 +2,23 @@ package com.farmersoplenty.datagen;
 
 import com.farmersoplenty.FarmersOPlenty;
 
+import com.farmersoplenty.registry.CropBlockBase;
 import com.farmersoplenty.registry.ModItems;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
 /**
  * The mod's blocks. Cabinets reuse Farmer's Delight's own CabinetBlock class wholesale,
@@ -45,6 +51,12 @@ public final class ModBlocks {
     public static final DeferredBlock<CabinetBlock> HELLBARK_CABINET = cabinet("hellbark_cabinet");
     public static final DeferredBlock<CabinetBlock> EMPYREAL_CABINET = cabinet("empyreal_cabinet");
 
+    // Crops
+    public static final List<DeferredBlock<? extends CropBlock>> CROPS = new ArrayList<>();
+
+    public static final DeferredBlock<CropBlockBase> BARLEY_CROP = registerCrop("barley", () -> ModBlocks.BARLEY_SEEDS.get());
+    public static final DeferredItem<Item> BARLEY_SEEDS = ModItems.seedItem("barley_seeds", BARLEY_CROP);
+
     /** Registers a cabinet block, records it, and registers its BlockItem (via ModItems). */
     private static DeferredBlock<CabinetBlock> cabinet(String name) {
         DeferredBlock<CabinetBlock> block = BLOCKS.registerBlock(
@@ -53,6 +65,14 @@ public final class ModBlocks {
                 BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL));
         CABINETS.add(block);
         ModItems.blockItem(block);
+        return block;
+    }
+
+    private static DeferredBlock<CropBlockBase> registerCrop(String name, Supplier<ItemLike> seed) {
+        DeferredBlock<CropBlockBase> block = BLOCKS.registerBlock(name,
+                props -> new CropBlockBase(props, seed),
+                BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT));
+        CROPS.add(block);
         return block;
     }
 
