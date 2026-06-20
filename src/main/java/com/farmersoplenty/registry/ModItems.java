@@ -62,6 +62,7 @@ public final class ModItems {
     public static final DeferredItem<Item> ICE_CUBES = item("ice_cubes");
     public static final DeferredItem<Item> CRUSHED_OATS = item("crushed_oats");
     public static final DeferredItem<Item> WATERLILY_STEMS = item("waterlily_stems");
+    public static final DeferredItem<Item> GLOWFLOWER_BERRY = item("glowflower_berry");
 
     // -------- Dishes -------
     // Soups

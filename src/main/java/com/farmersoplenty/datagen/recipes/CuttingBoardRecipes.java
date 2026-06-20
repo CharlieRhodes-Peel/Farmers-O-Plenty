@@ -11,6 +11,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
+import javax.lang.model.type.ExecutableType;
+
 /**
  * All cutting board recipes for Farmer's O' Plenty.
  * Pattern: Chopping(input, output, tool, amount).save(output) !! THAT'S IT! !!
@@ -48,6 +50,14 @@ public final class CuttingBoardRecipes {
         Chopping(
                 ExternalItems.bop("waterlily"),
                 ModItems.WATERLILY_STEMS.get(),
+                ExternalItems.KNIVES,
+                2
+        ).save(output);
+
+        //Glowflower Berry
+        Chopping(
+                ExternalItems.bop("glowflower"),
+                ModItems.GLOWFLOWER_BERRY.get(),
                 ExternalItems.KNIVES,
                 2
         ).save(output);
