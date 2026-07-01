@@ -55,6 +55,14 @@ public final class CookingPotRecipes {
                 .unlockedByAnyIngredient(ExternalItems.bop("bramble"), ExternalItems.bop("eyebulb"))
                 .save(output);
 
+        mealCreator(ModItems.WATERLILY_MIX.get(), NORMAL_COOKING, MEDIUM_EXP)
+                .addIngredient(ModItems.WATERLILY_STEMS.get())
+                .addIngredient(ExternalItems.fd("onion"))
+                .addIngredient(Items.POTATO)
+                .addIngredient(Items.SALMON)
+                .unlockedByAnyIngredient(ExternalItems.fd("onion"), ExternalItems.bop("waterlily"))
+                .save(output);
+
         // DRINKS
 
         // Lavender Honey Icecream

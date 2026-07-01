@@ -77,6 +77,11 @@ public final class ModItems {
             ModTags.Items.MEALS,
             ModTags.Items.SOUPS);
 
+
+    public static final DeferredItem<Item> WATERLILY_MIX = food("waterlily_mix",
+            foodStats(9, 3f, Items.BOWL, createEffect(ModEffects.NOURISHMENT, 5)),
+            ModTags.Items.MEALS);
+
     // Bottled
     public static final DeferredItem<Item> LAVENDER_HONEY_ICECREAM = food("lavender_honey_icecream",
             foodStats(8, 3f, Items.GLASS_BOTTLE, createEffect(ModEffects.NOURISHMENT, 3)),
