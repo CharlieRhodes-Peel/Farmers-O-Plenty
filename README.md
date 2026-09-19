@@ -22,6 +22,25 @@ All should be tagged with **Cabinets**
 - [x] Umbran Cabinet
 - [x] Hellbark Cabinet
 - [x] Empyreal Cabinet
+- 
+### Todo list! FINISH IT !!
+- [x] Cattail Rice Soup
+- [x] Lavender Honey Ice Cream
+- [x] Nether Soup
+- [ ] Berry Oat Bakewell
+- [ ] Pork and Cactus Rice
+- [x] Waterlily Mix
+- [ ] Soup of Ender
+- [x] Chopped Cattail
+- [x] Crushed Oats    
+- [x] Waterlily Stem  
+- [x] Glowflower Berry
+- [x] Ice Cubes       
+- [ ] Barley Seeds 
+- [x] Beer                
+- [ ] Glow Glow Juice     
+- [ ] Honey Flapjacks     
+- [ ] Clover Blossom Salad
 ### New dishes:
 All of these should be tagged with **Meals**
 
@@ -34,6 +53,8 @@ All of these should be tagged with **Meals**
 | Pork and Cactus Rice     | Raw Pork/Bacon + Cactus/Tiny Cactus + Rice      | 3           |       | N/A               |
 | Waterlily Mix            | Salmon + Onion + Waterlily Stem + Potato        | 5           |       | needs better name |
 | Soup of Ender            | Eye of Ender + 2xChorus Fruit + Lumaloop        | 3           | Soups | MayB Levatating?  |
+
+
 
 ### New items:
 All can be tagged with **Animal Foods**
