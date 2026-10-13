@@ -6,6 +6,7 @@ import com.farmersoplenty.registry.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -50,5 +51,16 @@ public class ItemTagsProvider extends net.minecraft.data.tags.ItemTagsProvider {
         tag(ModTags.Items.HONEY).add(
                 Items.HONEYCOMB,
                 Items.HONEY_BOTTLE);
+
+        // Pork
+        tag(ModTags.Items.PORK).add(
+                ExternalItems.fd("bacon"),
+                ExternalItems.fd("cooked_bacon"),
+                Items.PORKCHOP,
+                Items.COOKED_PORKCHOP);
+
+        tag(ModTags.Items.CACTUS).add(
+                Items.CACTUS,
+                ExternalItems.bop("tiny_cactus"));
     }
 }

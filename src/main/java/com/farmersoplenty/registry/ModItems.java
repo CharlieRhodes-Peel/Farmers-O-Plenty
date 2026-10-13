@@ -62,7 +62,12 @@ public final class ModItems {
     public static final DeferredItem<Item> ICE_CUBES = item("ice_cubes");
     public static final DeferredItem<Item> CRUSHED_OATS = item("crushed_oats");
     public static final DeferredItem<Item> WATERLILY_STEMS = item("waterlily_stems");
-    public static final DeferredItem<Item> GLOWFLOWER_BERRY = item("glowflower_berry");
+
+
+    public static final DeferredItem<Item> GLOWFLOWER_BERRY = food("glowflower_berry",
+            foodStats(2, 0f),
+            ModTags.Items.FOOD
+    );
 
     // -------- Dishes -------
     // Soups
@@ -77,15 +82,36 @@ public final class ModItems {
             ModTags.Items.MEALS,
             ModTags.Items.SOUPS);
 
+    public static final DeferredItem<Item> SOUP_OF_ENDER = food("soup_of_ender",
+            foodStats(9, 3f, Items.BOWL, createEffect(ModEffects.NOURISHMENT, 5)),
+            ModTags.Items.MEALS,
+            ModTags.Items.SOUPS);
 
     public static final DeferredItem<Item> WATERLILY_MIX = food("waterlily_mix",
             foodStats(9, 3f, Items.BOWL, createEffect(ModEffects.NOURISHMENT, 5)),
+            ModTags.Items.MEALS);
+
+    public static final DeferredItem<Item> CLOVER_BLOSSOM_SALAD = food("clover_blossom_salad",
+            foodStats(9, 3f, Items.BOWL, createEffectSeconds(MobEffects.REGENERATION, 15)),
+            ModTags.Items.MEALS);
+
+    public static final DeferredItem<Item> BERRY_OAT_BAKEWELL = food("berry_oat_bakewell",
+            foodStats(9, 3f, Items.BOWL, createEffect(ModEffects.NOURISHMENT, 3)),
+            ModTags.Items.MEALS);
+
+    public static final DeferredItem<Item> PORK_CACTUS_RICE = food("pork_cactus_rice",
+            foodStats(9, 3f, Items.BOWL, createEffect(ModEffects.NOURISHMENT, 3)),
             ModTags.Items.MEALS);
 
     // Bottled
     public static final DeferredItem<Item> LAVENDER_HONEY_ICECREAM = food("lavender_honey_icecream",
             foodStats(8, 3f, Items.GLASS_BOTTLE, createEffect(ModEffects.NOURISHMENT, 3)),
             ModTags.Items.DRINKS);
+
+    public static final DeferredItem<Item> GLOW_GLOW_JUICE = food("glow_glow_juice",
+            foodStats(8, 3f, Items.GLASS_BOTTLE, createEffect(MobEffects.GLOWING, 1)),
+            ModTags.Items.DRINKS);
+
 
     // ----------- Misc --------
     public static final DeferredItem<Item> BEER = drink("beer",
@@ -171,6 +197,10 @@ public final class ModItems {
         return () -> new MobEffectInstance(effect, minutes * 1200); // * 1200 to convert minutes -> ticks
     }
 
+    private static Supplier<MobEffectInstance> createEffectSeconds(Holder<MobEffect> effect, int seconds){
+        return () -> new MobEffectInstance(effect, seconds * 20); // * 1200 to convert minutes -> ticks
+    }
+
     /** Attach an explicit display name (use when the auto title-caser won't do). */
     public static DeferredItem<Item> named(DeferredItem<Item> item, String displayName) {
         DISPLAY_NAME_OVERRIDES.put(item, displayName);
@@ -186,6 +216,8 @@ public final class ModItems {
     public static DeferredItem<Item> seedItem(String name, DeferredBlock<? extends Block> crop) {
         Supplier<Item> sup = () -> new ItemNameBlockItem(crop.get(), new Item.Properties());
         DeferredItem<Item> item = ITEMS.register(name, sup);
+        addTag(ModTags.Items.SEEDS, item);
+        addTag(ModTags.Items.CROPS, item);
         ENTRIES.add(item);
         return item;
     }

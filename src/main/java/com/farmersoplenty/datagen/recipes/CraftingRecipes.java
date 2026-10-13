@@ -9,6 +9,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 
 /**
@@ -33,7 +34,15 @@ public final class CraftingRecipes {
         cabinet(output, ModBlocks.EMPYREAL_CABINET.get(), "empyreal");
 
         //Honey Flapjack
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.HONEY_FLAPJACK.get());
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.HONEY_FLAPJACK.get())
+                .requires(ModItems.CRUSHED_OATS.get(), 2)
+                .requires(Items.HONEY_BOTTLE)
+                .requires(Items.SUGAR)
+                .unlockedBy("has_crushed_oats", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CRUSHED_OATS))
+                .save(output);
+
+        //Berry Oat Bakewell
+
     }
 
     /*

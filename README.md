@@ -27,10 +27,10 @@ All should be tagged with **Cabinets**
 - [x] Cattail Rice Soup
 - [x] Lavender Honey Ice Cream
 - [x] Nether Soup
-- [ ] Berry Oat Bakewell
-- [ ] Pork and Cactus Rice
+- [ ] Berry Oat Bakewell -back
+- [x] Pork and Cactus Rice
 - [x] Waterlily Mix
-- [ ] Soup of Ender
+- [ ] Soup of Ender - back
 - [x] Chopped Cattail
 - [x] Crushed Oats    
 - [x] Waterlily Stem  
@@ -38,9 +38,9 @@ All should be tagged with **Cabinets**
 - [x] Ice Cubes       
 - [x] Barley Seeds 
 - [x] Beer                
-- [ ] Glow Glow Juice     
-- [ ] Honey Flapjacks     
-- [ ] Clover Blossom Salad
+- [ ] Glow Glow Juice     -back
+- [x] Honey Flapjacks     
+- [ ] Clover Blossom Salad - back
 - [x] Barley Growth Stages
 ### New dishes:
 All of these should be tagged with **Meals**

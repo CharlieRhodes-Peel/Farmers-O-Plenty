@@ -7,6 +7,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CartographyTableBlock;
+
+import javax.swing.text.html.HTML;
 
 /**
  * All custom tag keys in one place. Referenced both when declaring items
@@ -22,10 +25,15 @@ public final class ModTags {
         public static final TagKey<Item> DRINKS = cTag("drinks");
         public static final TagKey<Item> ANIMAL_FOODS = modTag("animal_foods");
         public static final TagKey<Item> CABINETS = modTag("cabinets");
+        public static final TagKey<Item> SEEDS = cTag("seeds");
+        public static final TagKey<Item> CROPS = cTag("crops");
+        public static final TagKey<Item> CABBAGE = cTag("foods/cabbage");
 
         //Stuff for Cooking pot / Crafting
         public static final TagKey<Item> LAVENDER = modTag("lavender");
         public static final TagKey<Item> HONEY = modTag("honey");
+        public static final TagKey<Item> PORK = modTag("pork");
+        public static final TagKey<Item> CACTUS = modTag("cactus");
 
         private static TagKey<Item> modTag(String path) {
             return TagKey.create(Registries.ITEM,
