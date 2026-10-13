@@ -36,11 +36,12 @@ All should be tagged with **Cabinets**
 - [x] Waterlily Stem  
 - [x] Glowflower Berry
 - [x] Ice Cubes       
-- [ ] Barley Seeds 
+- [x] Barley Seeds 
 - [x] Beer                
 - [ ] Glow Glow Juice     
 - [ ] Honey Flapjacks     
 - [ ] Clover Blossom Salad
+- [x] Barley Growth Stages
 ### New dishes:
 All of these should be tagged with **Meals**
 
