@@ -3,7 +3,11 @@ Alright lets just map out my brain and see what needs to be done:
 
 ##### General Notes
 **ALL EDIBLE FOODS SHOULD BE MARKED WITH TAG FOOD**
-# Additions: 
+
+# TOMORROWS WAKE UP TASK:
+## MAKE ITEMS THAT SHOULD BE COMPOSTABLE... SO!
+
+# Additions:
 
 ### Cabinets
 New **Cabinets** for all types of wood Biomes O' Plenty Adds: (12)
