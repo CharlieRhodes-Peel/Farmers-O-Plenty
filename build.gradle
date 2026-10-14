@@ -31,6 +31,9 @@ repositories {
     maven { url = "https://maven.createmod.net"}
     maven { url = "https://maven.ithundxr.dev/snapshots"}
     maven { url = "https://www.cursemaven.com"}
+    maven { url = "https://api.modrinth.com/maven"
+        content { includeGroup "maven.modrinth" }
+    }
 }
 
 base {
@@ -131,6 +134,9 @@ dependencies {
     //JEI optional dependency for an easier time!
     compileOnly("curse.maven:jei-238222:7420587")
     localRuntime "curse.maven:jei-238222:7420587"
+
+    runtimeOnly "maven.modrinth:sodium:Pb3OXVqC"   // Sodium 0.8.13 (NeoForge 1.21.1)
+    runtimeOnly "maven.modrinth:iris:t3ruzodq"     // Iris 1.8.14-beta.1 (NeoForge 1.21.1)
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

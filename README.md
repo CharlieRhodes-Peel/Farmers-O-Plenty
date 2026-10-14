@@ -1,86 +1,86 @@
 # Farmer's O' Plenty
-Alright lets just map out my brain and see what needs to be done:
 
-##### General Notes
-**ALL EDIBLE FOODS SHOULD BE MARKED WITH TAG FOOD**
+**A compatibility mod that brings [Biomes O' Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty) and [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight) together.**
 
-# TOMORROWS WAKE UP TASK:
-## MAKE ITEMS THAT SHOULD BE COMPOSTABLE... SO!
+Biomes O' Plenty fills your world with new plants, but most of them are just decoration. Farmer's O' Plenty turns them into ingredients with the help of Farmer's Delight. Chop cattails, grind sea oats, farm barley, brew beer, and cook new dishes in the cooking pot, all made from what you find in BoP's biomes.
 
-# Additions:
+## Requirements
 
-### Cabinets
-New **Cabinets** for all types of wood Biomes O' Plenty Adds: (12)
-All should be tagged with **Cabinets**
+| Dependency | Version |
+| --- | --- |
+| Minecraft | 1.21.1 |
+| NeoForge | 21.1.x |
+| [Biomes O' Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty) | required |
+| [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight) | required |
 
-- [x] Fir Cabinet
-- [x] Pine Cabinet
-- [x] Maple Cabinet
-- [x] Redwood Cabinet
-- [x] Mahogany Cabinet
-- [x] Jacaranda Cabinet
-- [x] Palm Cabinet
-- [x] Willow Cabinet
-- [x] Dead Cabinet
-- [x] Magic Cabinet
-- [x] Umbran Cabinet
-- [x] Hellbark Cabinet
-- [x] Empyreal Cabinet
-- 
-### Todo list! FINISH IT !!
-- [x] Cattail Rice Soup
-- [x] Lavender Honey Ice Cream
-- [x] Nether Soup
-- [ ] Berry Oat Bakewell
-- [x] Pork and Cactus Rice
-- [x] Waterlily Mix
-- [ ] Soup of Ender
-- [x] Chopped Cattail
-- [x] Crushed Oats    
-- [x] Waterlily Stem  
-- [x] Glowflower Berry
-- [x] Ice Cubes       
-- [x] Barley Seeds 
-- [x] Beer                
-- [x] Glow Glow Juice
-- [x] Honey Flapjacks     
-- [x] Clover Blossom Salad
-- [x] Barley Growth Stages
-### New dishes:
-All of these should be tagged with **Meals**
+Install all three alongside this mod. It adds nothing to the world on its own and only works as a bridge between the two.
 
-| Dish Name                | Ingredients                                     | Nourishment | Tags  | Notes             |
-| ------------------------ |-------------------------------------------------| ----------- | ----- | ----------------- |
-| Cattail Rice Soup        | Cattail/Chopped Cattail + Rice + Onion          | 1           | Soups | N/A               |
-| Lavender Honey Ice Cream | Lavender + Honey Bottle + Milk Bottle + Ice     | 3           |       | N/A               |
-| Nether Soup              | Bramble + Eyebulb + Blaze Powder + Nether Salad | 5           | Soups | MayB fire res?    |
-| Berry Oat Bakewell       | Glow Berry + Sweet Berry + Crushed Oats         | 3           |       | N/A               |
-| Pork and Cactus Rice     | Raw Pork/Bacon + Cactus/Tiny Cactus + Rice      | 3           |       | N/A               |
-| Waterlily Mix            | Salmon + Onion + Waterlily Stem + Potato        | 5           |       | needs better name |
-| Soup of Ender            | Eye of Ender + 2xChorus Fruit + Lumaloop        | 3           | Soups | MayB Levatating?  |
+## What's included
 
+### Barley, now farmable
 
+Biomes O' Plenty's barley can only be collected with shears, and you can't plant it. This mod fixes that.
 
-### New items:
-All can be tagged with **Animal Foods**
+- **Find your first seeds.** Break wild barley by hand (not with shears) and it has a chance to drop **Barley Seeds**, much like tall grass drops wheat seeds.
+- **Plant and grow.** Barley Seeds plant on farmland and grow through eight stages, and bone meal works.
+- **Harvest.** A fully grown crop drops Biomes O' Plenty's own **Barley** plus more seeds, and Fortune increases the seed yield.
 
-| Name             | From                | Tags | Notes                             |
-|------------------| ------------------- |------|-----------------------------------|
-| Chopped Cattail  | Chopping Cattail    |      | N/A                               |
-| Crushed Oats     | Chopping Sea Oats   |      | N/A                               |
-| Waterlily Stem   | Chopping Waterlily  |      | N/A                               |
-| Glowflower Berry | Chopping Glowflower |      | Could be placeable like glowberry |
-| Ice Cubes        | Chopping ANY Ice    |      | Is NOT an animal food             |
-| Barley Seeds     | Crafting Barely / Hitting it barehand |      |                                   |
+### Cabinets for every Biomes O' Plenty wood
 
-### New Others
+Farmer's Delight cabinets, in all 13 of Biomes O' Plenty's wood types. They work and craft like the originals: 6 slabs and 2 trapdoors of the matching wood.
 
-| Name                 | Ingredients                                                              | Effect            | Tags             | Notes                               |
-| -------------------- | ------------------------------------------------------------------------ | ----------------- | ---------------- |-------------------------------------|
-| Beer                 | 2xBarley + Wheat + Sugar \| Served in Glass Bottle                       | Absorption (1:00) | Drinks           | Should take a long time to make     |
-| Glow Glow Juice      | 2x Glow Berry + Glowflower Berry + Sugar + Ice \| Served In Glass Bottle | Glowing (1:00)    | Drinks           | Should look like Glow Berry Custard |
-| Honey Flapjacks      | 2xCrushed Oats + Honey Bottle + Sugar (CRAFTING NOT COOKING)             | Eat               | Cookies / Sweets | Should get multiple (min 3)         |
-| Clover Blossom Salad | Clover + Cabbage Foods + Beetroot + Glowflower Berry                     | Reg (0:10)        | Meals            |                                     |
+Fir, Pine, Maple, Redwood, Mahogany, Jacaranda, Palm, Willow, Dead, Magic, Umbran, Hellbark and Empyreal.
 
+### New ingredients
 
-Barley Crop also in the game
+Use a knife on the cutting board to turn Biomes O' Plenty plants into cooking ingredients.
+
+| Ingredient | Made by chopping |
+| --- | --- |
+| Chopped Cattail | Cattail |
+| Crushed Oats | Sea Oats |
+| Waterlily Stem | Waterlily |
+| Glowflower Berry | Glowflower |
+| Ice Cubes | Any ice |
+
+### New dishes
+
+Cook these in the Farmer's Delight cooking pot.
+
+| Dish | Ingredients |
+| --- | --- |
+| Cattail Rice Soup | Cattail or Chopped Cattail + Rice + Onion |
+| Lavender Honey Ice Cream | Lavender + Honey Bottle + Milk Bottle + Ice |
+| Nether Soup | Bramble + Eyebulb + Blaze Powder + Nether Salad |
+| Berry Oat Bakewell | Glow Berry + Sweet Berry + Crushed Oats |
+| Pork and Cactus Rice | Raw Pork or Bacon + Cactus or Tiny Cactus + Rice |
+| Waterlily Mix | Salmon + Onion + Waterlily Stem + Potato |
+| Soup of Ender | Eye of Ender + 2 Chorus Fruit + Lumaloop |
+| Clover Blossom Salad | Clover + Cabbage + Beetroot + Glowflower Berry |
+
+### Drinks and sweets
+
+| Item | How it's made | Effect |
+| --- | --- | --- |
+| Beer | 2 Barley + Wheat + Sugar, served in a Glass Bottle. It takes a long time to brew. | Absorption (1:00) |
+| Glow Glow Juice | 2 Glow Berries + Glowflower Berry + Sugar + Ice, served in a Glass Bottle | Glowing (1:00) |
+| Honey Flapjacks | Crafted, not cooked: 2 Crushed Oats + Honey Bottle + Sugar. Makes a batch. | Quick snack |
+
+### Good for the garden
+
+The new ingredients and baked goods can go in a composter. All edible items are tagged as food, so they work with other mods' food mechanics.
+
+## Compatibility
+
+- Designed around Farmer's Delight's cooking pot, cutting board and cabinets, so everything works with its recipe book and JEI.
+- Uses Biomes O' Plenty's own items (Barley, Cattail, Lavender and the rest), so you never end up with duplicate versions of a plant.
+- Everything is data-driven, so modpack makers can adjust recipes with a datapack.
+
+## Credits
+
+- [Biomes O' Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty) by Glitchfiend
+- [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight) by vectorwing
+
+## Issues and suggestions
+
+Found a bug, or have an idea for another dish or ingredient? Open an issue on the repository.
