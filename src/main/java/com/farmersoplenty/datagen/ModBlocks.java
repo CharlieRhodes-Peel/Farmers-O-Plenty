@@ -55,7 +55,7 @@ public final class ModBlocks {
     public static final List<DeferredBlock<? extends CropBlock>> CROPS = new ArrayList<>();
 
     public static final DeferredBlock<CropBlockBase> BARLEY_CROP = registerCrop("barley", () -> ModBlocks.BARLEY_SEEDS.get());
-    public static final DeferredItem<Item> BARLEY_SEEDS = ModItems.seedItem("barley_seeds", BARLEY_CROP);
+    public static final DeferredItem<Item> BARLEY_SEEDS = ModItems.compostable(ModItems.COMPOST_SEED, ModItems.seedItem("barley_seeds", BARLEY_CROP));
 
     /** Registers a cabinet block, records it, and registers its BlockItem (via ModItems). */
     private static DeferredBlock<CabinetBlock> cabinet(String name) {

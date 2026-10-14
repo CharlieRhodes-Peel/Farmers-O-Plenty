@@ -36,14 +36,18 @@ public class DataGenerators {
                 new BlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(),
                 new LanguageProvider(packOutput));
-        generator.addProvider(event.includeServer(),
-                new ModGlobalLootModifiers(packOutput, lookupProvider));
 
         // ----- Server data -----
         // Block tags must be built first so item tags can copy block->item where needed.
         BlockTagsProvider blockTags =
                 new BlockTagsProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTags);
+
+        generator.addProvider(event.includeServer(),
+                new ModGlobalLootModifiers(packOutput, lookupProvider));
+
+        generator.addProvider(event.includeServer(),
+                new ModDataMaps(packOutput, lookupProvider));
 
         generator.addProvider(event.includeServer(),
                 new ItemTagsProvider(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));

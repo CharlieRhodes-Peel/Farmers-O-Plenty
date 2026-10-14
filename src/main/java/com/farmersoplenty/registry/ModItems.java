@@ -43,6 +43,12 @@ import java.util.function.Supplier;
 public final class ModItems {
     private ModItems() {}
 
+    //CONSTANTS
+    public static final float COMPOST_SEED = 0.3f;
+    public static final float COMPOST_CROP = 0.65f;
+    public static final float COMPOST_BAKED = 0.85f;
+    public static final float COMPOST_FEAST = 1.0f;
+
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(FarmersOPlenty.MODID);
 
     // ---- Datagen metadata, captured as items are declared (must sit ABOVE the content below) ----
@@ -53,6 +59,8 @@ public final class ModItems {
     /** tag -> items belonging to it. */
     public static final Map<TagKey<Item>, List<DeferredItem<Item>>> TAGGED = new LinkedHashMap<>();
 
+    public static final Map<DeferredItem<? extends Item>, Float> COMPOSTABLES = new LinkedHashMap<>();
+
     // =====================================================================================
     //  CONTENT  (step 3+ goes here — keep declarations BELOW the maps above)
     // =====================================================================================
@@ -60,18 +68,20 @@ public final class ModItems {
     // ------- Ingredients ------
     public static final DeferredItem<Item> CHOPPED_CATTAIL = animalFood("chopped_cattail");
     public static final DeferredItem<Item> ICE_CUBES = item("ice_cubes");
-    public static final DeferredItem<Item> CRUSHED_OATS = item("crushed_oats");
-    public static final DeferredItem<Item> WATERLILY_STEMS = item("waterlily_stems");
+    public static final DeferredItem<Item> CRUSHED_OATS = animalFood("crushed_oats");
+    public static final DeferredItem<Item> WATERLILY_STEMS = animalFood("waterlily_stems");
 
 
-    public static final DeferredItem<Item> GLOWFLOWER_BERRY = food("glowflower_berry",
+    public static final DeferredItem<Item> GLOWFLOWER_BERRY =
+            compostable(COMPOST_CROP,
+            food("glowflower_berry",
             foodStats(2, 0f),
-            ModTags.Items.FOOD
-    );
+            ModTags.Items.FOOD));
 
     // -------- Dishes -------
     // Soups
-    public static final DeferredItem<Item> CATTAIL_RICE_SOUP = food("cattail_rice_soup",
+    public static final DeferredItem<Item> CATTAIL_RICE_SOUP =
+            food("cattail_rice_soup",
             foodStats(8,3f, Items.BOWL, createEffect(ModEffects.NOURISHMENT, 3)),
             ModTags.Items.MEALS,
             ModTags.Items.SOUPS
@@ -108,7 +118,7 @@ public final class ModItems {
             foodStats(8, 3f, Items.GLASS_BOTTLE, createEffect(ModEffects.NOURISHMENT, 3)),
             ModTags.Items.DRINKS);
 
-    public static final DeferredItem<Item> GLOW_GLOW_JUICE = food("glow_glow_juice",
+    public static final DeferredItem<Item> GLOW_GLOW_JUICE = drink("glow_glow_juice",
             foodStats(8, 3f, Items.GLASS_BOTTLE, createEffect(MobEffects.GLOWING, 1)),
             ModTags.Items.DRINKS);
 
@@ -118,8 +128,10 @@ public final class ModItems {
             drinkStats(4, 3f, Items.GLASS_BOTTLE, createEffect(MobEffects.ABSORPTION, 1)),
             ModTags.Items.DRINKS);
 
-    public static final DeferredItem<Item> HONEY_FLAPJACK = food("honey_flapjack",
-            foodStats(6, 3f));
+    public static final DeferredItem<Item> HONEY_FLAPJACK =
+            compostable(COMPOST_BAKED,
+            food("honey_flapjack",
+            foodStats(6, 3f)));
 
     // =====================================================================================
     //  HELPERS
@@ -153,7 +165,13 @@ public final class ModItems {
     @SafeVarargs
     public static DeferredItem<Item> animalFood(String name, TagKey<Item>... extraTags) {
         DeferredItem<Item> item = item(name, extraTags);
+        COMPOSTABLES.put(item, COMPOST_CROP);
         addTag(ModTags.Items.ANIMAL_FOODS, item);
+        return item;
+    }
+
+    public static DeferredItem<Item> compostable(float compostAmount, DeferredItem<Item> item){
+        COMPOSTABLES.put(item, compostAmount);
         return item;
     }
 
