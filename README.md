@@ -8,8 +8,7 @@ Biomes O' Plenty fills your world with new plants, but most of them are just dec
 
 | Dependency | Version |
 | --- | --- |
-| Minecraft | 1.21.1 |
-| NeoForge | 21.1.x |
+| Minecraft + loader | 1.21.1 with NeoForge 21.1.x, **or** 1.20.1 with Forge 47.x |
 | [Biomes O' Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty) | required |
 | [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight) | required |
 
@@ -80,6 +79,18 @@ The new ingredients and baked goods can go in a composter. All edible items are 
 
 - [Biomes O' Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty) by Glitchfiend
 - [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight) by vectorwing
+
+## Building from source
+
+One source tree builds every supported version, using [Stonecutter](https://stonecutter.kikugie.dev/).
+
+- `./gradlew build` builds all versions. Jars land in `versions/<version>/build/libs/`.
+- `./gradlew :1.20.1-forge:build` (or `:1.21.1-neoforge:...`) builds, runs (`runClient`) or datagens (`runData`) a single version.
+- `src/` is written for the *active* version (1.21.1-neoforge when committed). Code that differs per version is wrapped in
+  `//? if ...` comments, e.g. `//? if forge {` or `//? if >=1.21 {`. To edit the 1.20.1 side with full IDE support, run the
+  `Set active project to 1.20.1-forge` task (or use the Stonecutter IntelliJ plugin), then `Reset active project` before committing.
+- Per-version settings (Minecraft, loader and dependency versions) live in `versions/<version>/gradle.properties`;
+  generated data lives in `versions/<version>/src/generated/resources`.
 
 ## Issues and suggestions
 

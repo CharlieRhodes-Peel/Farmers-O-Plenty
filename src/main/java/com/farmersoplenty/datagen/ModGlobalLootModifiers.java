@@ -15,8 +15,13 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
+//? if neoforge {
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
 import net.neoforged.neoforge.common.loot.LootTableIdCondition;
+//?} else {
+/*import net.minecraftforge.common.data.GlobalLootModifierProvider;
+import net.minecraftforge.common.loot.LootTableIdCondition;
+*///?}
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -24,7 +29,10 @@ import java.util.concurrent.CompletableFuture;
 public class ModGlobalLootModifiers extends GlobalLootModifierProvider {
 
     public ModGlobalLootModifiers(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+        //? if neoforge {
         super(output, registries, FarmersOPlenty.MODID);
+        //?} else
+        //super(output, FarmersOPlenty.MODID);
     }
 
     @Override
@@ -37,7 +45,9 @@ public class ModGlobalLootModifiers extends GlobalLootModifierProvider {
                                 ResourceLocation.fromNamespaceAndPath("biomesoplenty", "blocks/barley")).build(),
                         MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS)).invert().build(),
                         LootItemRandomChanceCondition.randomChance(0.125F).build()
-                }, ModBlocks.BARLEY_SEEDS.get()),
-                List.of());
+                }, ModBlocks.BARLEY_SEEDS.get())
+                //? if neoforge
+                , List.of() // NeoForge-only list of load conditions
+        );
     }
 }

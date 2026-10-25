@@ -2,6 +2,7 @@ package com.farmersoplenty.registry;
 
 import com.farmersoplenty.FarmersOPlenty;
 
+//? if >=1.21
 import net.minecraft.core.Holder;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffect;
@@ -15,13 +16,22 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DragonEggBlock;
+//? if neoforge {
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+//?} else {
+/*import com.farmersoplenty.platform.DeferredBlock;
+import com.farmersoplenty.platform.DeferredItem;
+import com.farmersoplenty.platform.DeferredRegister;
+import net.minecraftforge.eventbus.api.IEventBus;
+*///?}
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import java.util.ArrayList;
+//? if <1.21
+//import java.util.IdentityHashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,6 +70,11 @@ public final class ModItems {
     public static final Map<TagKey<Item>, List<DeferredItem<Item>>> TAGGED = new LinkedHashMap<>();
 
     public static final Map<DeferredItem<? extends Item>, Float> COMPOSTABLES = new LinkedHashMap<>();
+
+    //? if <1.21 {
+    /*// food -> the container it leaves behind. 1.20.1's FoodProperties can't hold one, see withContainer(...)
+    private static final Map<FoodProperties, Item> CONTAINERS = new IdentityHashMap<>();
+    *///?}
 
     // =====================================================================================
     //  CONTENT  (step 3+ goes here — keep declarations BELOW the maps above)
@@ -147,7 +162,7 @@ public final class ModItems {
     @SafeVarargs
     public static DeferredItem<Item> food(String name, FoodProperties food, TagKey<Item>... extraTags) {
         DeferredItem<Item> item = register(name,
-                props -> new EffectTooltipItem(props.food(food)), extraTags);
+                props -> new EffectTooltipItem(withFood(props, food)), extraTags);
         addTag(ModTags.Items.FOOD, item);
         return item;
     }
@@ -155,7 +170,7 @@ public final class ModItems {
     @SafeVarargs
     public static DeferredItem<Item> drink(String name, FoodProperties drink, TagKey<Item>... extraTags){
         DeferredItem<Item> item = register(name,
-                props -> new DrinkItem(props.food(drink)), extraTags);
+                props -> new DrinkItem(withFood(props, drink)), extraTags);
         addTag(ModTags.Items.FOOD, item);
         addTag(ModTags.Items.DRINKS, item);
         return item;
@@ -182,35 +197,49 @@ public final class ModItems {
 
     //Returns Container on use
     public static FoodProperties foodStats(int nutrition, float saturation, ItemLike container) {
-        return new FoodProperties.Builder()
+        return withContainer(new FoodProperties.Builder()
                 .nutrition(nutrition)
-                .saturationModifier(saturation)
-                .usingConvertsTo(container)
-                .build();
+                .saturationModifier(saturation), container);
     }
 
     //Applied A potion effect and return container on use
     public static FoodProperties foodStats(int nutrition, float saturation, ItemLike container, Supplier<MobEffectInstance> potionEffect) {
-        return new FoodProperties.Builder()
+        return withContainer(new FoodProperties.Builder()
                 .nutrition(nutrition)
                 .saturationModifier(saturation)
-                .usingConvertsTo(container)
-                .effect(potionEffect, 1.0f)
-                .build();
+                .effect(potionEffect, 1.0f), container);
     }
 
     //Same as food stats but allows it to be drunk even when hunger is full
     public static FoodProperties drinkStats(int nutrition, float saturation, ItemLike container, Supplier<MobEffectInstance> potionEffect){
-        return new FoodProperties.Builder()
+        return withContainer(new FoodProperties.Builder()
                 .nutrition(nutrition)
                 .saturationModifier(saturation)
-                .usingConvertsTo(container)
                 .effect(potionEffect, 1.0f)
-                .alwaysEdible()
-                .build();
+                .alwaysEdible(), container);
+    }
+
+    /** Builds the food so that eating it hands back {@code container} (bowl, bottle...). */
+    private static FoodProperties withContainer(FoodProperties.Builder food, ItemLike container) {
+        //? if >=1.21 {
+        return food.usingConvertsTo(container).build();
+        //?} else {
+        /*FoodProperties built = food.build();
+        CONTAINERS.put(built, container.asItem());
+        return built;
+        *///?}
+    }
+
+    /** Applies food to item properties (and, on 1.20.1, its container as the craft remainder). */
+    private static Item.Properties withFood(Item.Properties props, FoodProperties food) {
+        //? if >=1.21 {
+        return props.food(food);
+        //?} else
+        //return props.food(food).craftRemainder(CONTAINERS.get(food));
     }
 
     //Type changing helper
+    //? if >=1.21 {
     private static Supplier<MobEffectInstance> createEffect(Holder<MobEffect> effect, int minutes){
         return () -> new MobEffectInstance(effect, minutes * 1200); // * 1200 to convert minutes -> ticks
     }
@@ -218,6 +247,20 @@ public final class ModItems {
     private static Supplier<MobEffectInstance> createEffectSeconds(Holder<MobEffect> effect, int seconds){
         return () -> new MobEffectInstance(effect, seconds * 20); // * 1200 to convert minutes -> ticks
     }
+    //?} else {
+    /*// On 1.20.1 effects aren't Holders: vanilla ones are plain MobEffects, FD's are RegistryObjects (Suppliers).
+    private static Supplier<MobEffectInstance> createEffect(Supplier<MobEffect> effect, int minutes){
+        return () -> new MobEffectInstance(effect.get(), minutes * 1200); // * 1200 to convert minutes -> ticks
+    }
+
+    private static Supplier<MobEffectInstance> createEffect(MobEffect effect, int minutes){
+        return createEffect(() -> effect, minutes);
+    }
+
+    private static Supplier<MobEffectInstance> createEffectSeconds(MobEffect effect, int seconds){
+        return () -> new MobEffectInstance(effect, seconds * 20); // * 20 to convert seconds -> ticks
+    }
+    *///?}
 
     /** Attach an explicit display name (use when the auto title-caser won't do). */
     public static DeferredItem<Item> named(DeferredItem<Item> item, String displayName) {

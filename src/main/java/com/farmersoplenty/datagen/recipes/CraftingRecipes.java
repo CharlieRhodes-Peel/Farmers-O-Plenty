@@ -6,12 +6,20 @@ import com.farmersoplenty.datagen.ModBlocks;
 import com.farmersoplenty.registry.ModItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
+//? if >=1.21 {
 import net.minecraft.data.recipes.RecipeOutput;
+//?} else {
+/*import net.minecraft.data.recipes.FinishedRecipe;
+
+import java.util.function.Consumer;
+*///?}
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 
+// Recipes are written to a RecipeOutput since 1.20.2; before that it's a Consumer<FinishedRecipe>.
+//~ if <1.21 'RecipeOutput' -> 'Consumer<FinishedRecipe>' {
 /**
  * Vanilla shaped/shapeless crafting recipes (cabinets now; flapjacks, salads later).
  */
@@ -78,3 +86,4 @@ public final class CraftingRecipes {
                 .save(output);
     }
 }
+//~}

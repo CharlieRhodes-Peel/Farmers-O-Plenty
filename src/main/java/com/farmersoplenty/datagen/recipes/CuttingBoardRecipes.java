@@ -3,7 +3,13 @@ package com.farmersoplenty.datagen.recipes;
 import com.farmersoplenty.FarmersOPlenty;
 import com.farmersoplenty.registry.ExternalItems;
 import com.farmersoplenty.registry.ModItems;
+//? if >=1.21 {
 import net.minecraft.data.recipes.RecipeOutput;
+//?} else {
+/*import net.minecraft.data.recipes.FinishedRecipe;
+
+import java.util.function.Consumer;
+*///?}
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -13,6 +19,8 @@ import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import javax.lang.model.type.ExecutableType;
 
+// Recipes are written to a RecipeOutput since 1.20.2; before that it's a Consumer<FinishedRecipe>.
+//~ if <1.21 'RecipeOutput' -> 'Consumer<FinishedRecipe>' {
 /**
  * All cutting board recipes for Farmer's O' Plenty.
  * Pattern: Chopping(input, output, tool, amount).save(output) !! THAT'S IT! !!
@@ -84,3 +92,4 @@ public final class CuttingBoardRecipes {
     }
 
 }
+//~}

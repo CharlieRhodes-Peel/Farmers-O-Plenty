@@ -9,10 +9,17 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+//? if neoforge {
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+//?} else {
+/*import com.farmersoplenty.platform.DeferredBlock;
+import com.farmersoplenty.platform.DeferredItem;
+import com.farmersoplenty.platform.DeferredRegister;
+import net.minecraftforge.eventbus.api.IEventBus;
+*///?}
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 import javax.swing.*;

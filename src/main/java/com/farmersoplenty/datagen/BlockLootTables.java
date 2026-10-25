@@ -3,6 +3,7 @@ package com.farmersoplenty.datagen;
 import com.farmersoplenty.datagen.ModBlocks;
 import com.farmersoplenty.registry.ExternalItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+//? if >=1.21
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
@@ -22,9 +23,15 @@ import java.util.stream.Stream;
  */
 public class BlockLootTables extends BlockLootSubProvider {
 
+    //? if >=1.21 {
     protected BlockLootTables(HolderLookup.Provider provider) {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags(), provider);
     }
+    //?} else {
+    /*protected BlockLootTables() {
+        super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+    }
+    *///?}
 
     @Override
     protected void generate() {

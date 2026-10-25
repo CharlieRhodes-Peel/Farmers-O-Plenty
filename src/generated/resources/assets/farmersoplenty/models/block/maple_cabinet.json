@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "farmersoplenty:block/maple_cabinet_front",
-    "side": "farmersoplenty:block/maple_cabinet_side",
-    "top": "farmersoplenty:block/maple_cabinet_top"
-  }
-}

@@ -6,9 +6,15 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
+//? if neoforge {
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
+//?} else {
+/*import com.farmersoplenty.platform.DeferredHolder;
+import com.farmersoplenty.platform.DeferredRegister;
+import net.minecraftforge.eventbus.api.IEventBus;
+*///?}
 
 /**
  * A single creative tab that auto-fills with every item declared in ModItems,

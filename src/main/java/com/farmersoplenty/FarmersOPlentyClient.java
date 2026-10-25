@@ -1,5 +1,7 @@
 package com.farmersoplenty;
 
+// NeoForge only: Forge 1.20.1 has neither client-only @Mod classes nor a built-in config screen.
+//? if neoforge {
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -15,3 +17,4 @@ public class FarmersOPlentyClient {
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
 }
+//?}

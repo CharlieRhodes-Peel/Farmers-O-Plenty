@@ -8,7 +8,10 @@ import net.minecraft.data.PackOutput;
  * Generates assets/farmersoplenty/lang/en_us.json.
  * add(Item, "Name") / add(Block, "Name") here for every new content entry.
  */
+//? if neoforge {
 public class LanguageProvider extends net.neoforged.neoforge.common.data.LanguageProvider {
+//?} else
+//public class LanguageProvider extends net.minecraftforge.common.data.LanguageProvider {
 
     public LanguageProvider(PackOutput output) {
         super(output, FarmersOPlenty.MODID, "en_us");

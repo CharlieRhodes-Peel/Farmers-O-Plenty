@@ -5,7 +5,13 @@ import com.farmersoplenty.registry.ExternalItems;
 import com.farmersoplenty.registry.ModItems;
 import com.farmersoplenty.registry.ModTags;
 import net.minecraft.core.registries.Registries;
+//? if >=1.21 {
 import net.minecraft.data.recipes.RecipeOutput;
+//?} else {
+/*import net.minecraft.data.recipes.FinishedRecipe;
+
+import java.util.function.Consumer;
+*///?}
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -20,6 +26,8 @@ import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 
 import java.awt.*;
 
+// Recipes are written to a RecipeOutput since 1.20.2; before that it's a Consumer<FinishedRecipe>.
+//~ if <1.21 'RecipeOutput' -> 'Consumer<FinishedRecipe>' {
 public final class CookingPotRecipes {
     private CookingPotRecipes() {}
 
@@ -148,3 +156,4 @@ public final class CookingPotRecipes {
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS);
     }
 }
+//~}

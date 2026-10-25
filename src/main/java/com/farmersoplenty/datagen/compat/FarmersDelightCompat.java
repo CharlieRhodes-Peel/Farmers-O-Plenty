@@ -1,5 +1,8 @@
 package com.farmersoplenty.datagen.compat;
 
+// NeoForge only. Minecraft 1.20.1 only checks a BlockEntityType's valid blocks before *ticking* a block entity,
+// and FD's cabinet never ticks, so on Forge 1.20.1 our cabinets work with FD's CABINET type as-is.
+//? if neoforge {
 import com.farmersoplenty.FarmersOPlenty;
 import com.farmersoplenty.datagen.ModBlocks;
 
@@ -29,3 +32,4 @@ public final class FarmersDelightCompat {
         event.modify(ModBlockEntityTypes.CABINET.get(), cabinets);
     }
 }
+//?}

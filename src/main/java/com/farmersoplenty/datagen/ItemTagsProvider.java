@@ -9,7 +9,10 @@ import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+//? if neoforge {
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+//?} else
+//import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;

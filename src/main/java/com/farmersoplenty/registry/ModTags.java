@@ -27,7 +27,10 @@ public final class ModTags {
         public static final TagKey<Item> CABINETS = modTag("cabinets");
         public static final TagKey<Item> SEEDS = cTag("seeds");
         public static final TagKey<Item> CROPS = cTag("crops");
+        //? if >=1.21 {
         public static final TagKey<Item> CABBAGE = cTag("foods/cabbage");
+        //?} else
+        //public static final TagKey<Item> CABBAGE = cTag("crops/cabbage");
 
         //Stuff for Cooking pot / Crafting
         public static final TagKey<Item> LAVENDER = modTag("lavender");
@@ -40,9 +43,14 @@ public final class ModTags {
                     ResourceLocation.fromNamespaceAndPath(FarmersOPlenty.MODID, path));
         }
 
+        /** Common (cross-mod) tag: "c:" since 1.21, "forge:" on Forge 1.20.1. */
         private static TagKey<Item> cTag(String path) {
+            //? if >=1.21 {
+            String namespace = "c";
+            //?} else
+            //String namespace = "forge";
             return TagKey.create(Registries.ITEM,
-                    ResourceLocation.fromNamespaceAndPath("c", path));
+                    ResourceLocation.fromNamespaceAndPath(namespace, path));
         }
     }
 

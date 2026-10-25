@@ -5,10 +5,17 @@ import com.farmersoplenty.FarmersOPlenty;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+//? if neoforge {
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+//?} else {
+/*import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+*///?}
 
 import java.util.concurrent.CompletableFuture;
 
@@ -19,7 +26,10 @@ import java.util.concurrent.CompletableFuture;
  * Client providers (assets: models, lang) are gated behind includeClient().
  * Server providers (data: tags, loot, recipes) are gated behind includeServer().
  */
+//? if neoforge {
 @EventBusSubscriber(modid = FarmersOPlenty.MODID)
+//?} else
+//@Mod.EventBusSubscriber(modid = FarmersOPlenty.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
 
     @SubscribeEvent
@@ -46,8 +56,10 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(),
                 new ModGlobalLootModifiers(packOutput, lookupProvider));
 
+        //? if neoforge {
         generator.addProvider(event.includeServer(),
                 new ModDataMaps(packOutput, lookupProvider));
+        //?}
 
         generator.addProvider(event.includeServer(),
                 new ItemTagsProvider(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
@@ -55,7 +67,10 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(),
                 LootTableProvider.create(packOutput, lookupProvider));
 
+        //? if >=1.21 {
         generator.addProvider(event.includeServer(),
                 new RecipeProvider(packOutput, lookupProvider));
+        //?} else
+        //generator.addProvider(event.includeServer(), new RecipeProvider(packOutput));
     }
 }

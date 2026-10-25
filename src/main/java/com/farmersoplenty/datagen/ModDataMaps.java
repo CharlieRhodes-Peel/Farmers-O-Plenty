@@ -1,5 +1,7 @@
 package com.farmersoplenty.datagen;
 
+// NeoForge only: data maps don't exist on Forge 1.20.1, where FarmersOPlenty.registerCompostables does this instead.
+//? if neoforge {
 import com.farmersoplenty.registry.ExternalItems;
 import com.farmersoplenty.registry.ModItems;
 import com.farmersoplenty.registry.ModTags;
@@ -32,3 +34,4 @@ public class ModDataMaps extends DataMapProvider {
                 new Compostable(ModItems.COMPOST_CROP), false);
     }
 }
+//?}

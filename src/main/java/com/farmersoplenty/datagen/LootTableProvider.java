@@ -20,7 +20,9 @@ public class LootTableProvider {
                 output,
                 Set.of(), // required table IDs to validate against; empty for now
                 List.of(new net.minecraft.data.loot.LootTableProvider.SubProviderEntry(
-                        BlockLootTables::new, LootContextParamSets.BLOCK)),
-                lookupProvider);
+                        BlockLootTables::new, LootContextParamSets.BLOCK))
+                //? if >=1.21
+                , lookupProvider
+        );
     }
 }

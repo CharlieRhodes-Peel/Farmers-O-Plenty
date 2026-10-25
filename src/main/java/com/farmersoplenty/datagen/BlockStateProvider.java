@@ -7,15 +7,24 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
+//? if neoforge {
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+//?} else {
+/*import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.common.data.ExistingFileHelper;
+*///?}
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 /**
  * Generates blockstate JSON + block models + (usually) their item models.
  */
+//? if neoforge {
 public class BlockStateProvider extends net.neoforged.neoforge.client.model.generators.BlockStateProvider {
+//?} else
+//public class BlockStateProvider extends net.minecraftforge.client.model.generators.BlockStateProvider {
 
     public BlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, FarmersOPlenty.MODID, exFileHelper);
