@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "farmersoplenty:pork"
+    },
+    {
+      "tag": "farmersoplenty:cactus"
+    },
+    {
+      "item": "farmersdelight:rice"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "farmersoplenty:pork_cactus_rice"
+  }
+}

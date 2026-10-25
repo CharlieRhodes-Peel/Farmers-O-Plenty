@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:ice"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "farmersoplenty:ice_cubes"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "cabinet",
+  "key": {
+    "D": {
+      "item": "biomesoplenty:dead_trapdoor"
+    },
+    "S": {
+      "item": "biomesoplenty:dead_slab"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "D D",
+    "SSS"
+  ],
+  "result": {
+    "item": "farmersoplenty:dead_cabinet"
+  },
+  "show_notification": true
+}

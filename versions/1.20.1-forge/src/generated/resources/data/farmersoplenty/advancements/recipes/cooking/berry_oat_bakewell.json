@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_any_ingredient": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:glow_berries",
+              "minecraft:sweet_berries",
+              "farmersoplenty:crushed_oats",
+              "farmersoplenty:glowflower_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "farmersoplenty:cooking/berry_oat_bakewell"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_any_ingredient",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "farmersoplenty:cooking/berry_oat_bakewell"
+    ]
+  },
+  "sends_telemetry_event": true
+}

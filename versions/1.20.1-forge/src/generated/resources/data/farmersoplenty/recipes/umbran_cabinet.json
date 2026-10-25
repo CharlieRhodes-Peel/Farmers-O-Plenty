@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "cabinet",
+  "key": {
+    "D": {
+      "item": "biomesoplenty:umbran_trapdoor"
+    },
+    "S": {
+      "item": "biomesoplenty:umbran_slab"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "D D",
+    "SSS"
+  ],
+  "result": {
+    "item": "farmersoplenty:umbran_cabinet"
+  },
+  "show_notification": true
+}

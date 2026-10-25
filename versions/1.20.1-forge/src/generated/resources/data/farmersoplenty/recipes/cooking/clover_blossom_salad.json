@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "farmersoplenty:glowflower_berry"
+    },
+    {
+      "item": "biomesoplenty:clover"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "tag": "forge:crops/cabbage"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "farmersoplenty:clover_blossom_salad"
+  }
+}

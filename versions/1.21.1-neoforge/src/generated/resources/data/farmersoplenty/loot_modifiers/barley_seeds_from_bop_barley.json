@@ -1,0 +1,23 @@
+{
+  "type": "farmersoplenty:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "biomesoplenty:blocks/barley"
+    },
+    {
+      "condition": "minecraft:inverted",
+      "term": {
+        "condition": "minecraft:match_tool",
+        "predicate": {
+          "items": "minecraft:shears"
+        }
+      }
+    },
+    {
+      "chance": 0.125,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "farmersoplenty:barley_seeds"
+}

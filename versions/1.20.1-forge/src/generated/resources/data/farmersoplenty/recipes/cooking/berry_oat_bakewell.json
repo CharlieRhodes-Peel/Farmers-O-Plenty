@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "farmersoplenty:glowflower_berry"
+    },
+    {
+      "item": "farmersoplenty:crushed_oats"
+    },
+    {
+      "item": "farmersoplenty:crushed_oats"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "farmersoplenty:berry_oat_bakewell"
+  }
+}

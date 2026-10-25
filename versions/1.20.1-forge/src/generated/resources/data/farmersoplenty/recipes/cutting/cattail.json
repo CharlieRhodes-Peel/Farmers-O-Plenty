@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:cattail"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "farmersoplenty:chopped_cattail"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  }
+}

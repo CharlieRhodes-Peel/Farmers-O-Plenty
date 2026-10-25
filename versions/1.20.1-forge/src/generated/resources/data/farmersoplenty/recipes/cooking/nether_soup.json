@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "biomesoplenty:bramble"
+    },
+    {
+      "item": "biomesoplenty:eyebulb"
+    },
+    {
+      "item": "farmersdelight:nether_salad"
+    },
+    {
+      "item": "biomesoplenty:blood_bucket"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "farmersoplenty:nether_soup"
+  }
+}

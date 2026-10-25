@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "farmersoplenty:glowflower_berry"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "farmersoplenty:ice_cubes"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "farmersoplenty:glow_glow_juice"
+  }
+}

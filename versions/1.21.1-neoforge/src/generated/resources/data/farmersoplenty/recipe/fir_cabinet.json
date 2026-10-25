@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "cabinet",
+  "key": {
+    "D": {
+      "item": "biomesoplenty:fir_trapdoor"
+    },
+    "S": {
+      "item": "biomesoplenty:fir_slab"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "D D",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersoplenty:fir_cabinet"
+  }
+}

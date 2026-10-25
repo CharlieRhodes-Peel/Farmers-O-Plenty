@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "cabinet",
+  "key": {
+    "D": {
+      "item": "biomesoplenty:empyreal_trapdoor"
+    },
+    "S": {
+      "item": "biomesoplenty:empyreal_slab"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "D D",
+    "SSS"
+  ],
+  "result": {
+    "item": "farmersoplenty:empyreal_cabinet"
+  },
+  "show_notification": true
+}

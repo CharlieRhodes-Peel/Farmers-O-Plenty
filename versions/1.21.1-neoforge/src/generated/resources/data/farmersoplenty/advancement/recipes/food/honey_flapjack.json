@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crushed_oats": {
+      "conditions": {
+        "items": [
+          {
+            "items": "farmersoplenty:crushed_oats"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "farmersoplenty:honey_flapjack"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_crushed_oats"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "farmersoplenty:honey_flapjack"
+    ]
+  }
+}

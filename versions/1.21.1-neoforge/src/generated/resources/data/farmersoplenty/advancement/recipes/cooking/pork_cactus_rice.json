@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_any_ingredient": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:porkchop",
+              "minecraft:cooked_porkchop",
+              "biomesoplenty:tiny_cactus",
+              "minecraft:cactus",
+              "farmersdelight:rice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "farmersoplenty:cooking/pork_cactus_rice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_any_ingredient"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "farmersoplenty:cooking/pork_cactus_rice"
+    ]
+  }
+}

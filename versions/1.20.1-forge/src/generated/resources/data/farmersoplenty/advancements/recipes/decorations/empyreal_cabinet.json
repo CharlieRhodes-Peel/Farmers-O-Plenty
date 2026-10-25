@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_empyreal_trapdoor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:empyreal_trapdoor"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "farmersoplenty:empyreal_cabinet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_empyreal_trapdoor",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "farmersoplenty:empyreal_cabinet"
+    ]
+  },
+  "sends_telemetry_event": false
+}

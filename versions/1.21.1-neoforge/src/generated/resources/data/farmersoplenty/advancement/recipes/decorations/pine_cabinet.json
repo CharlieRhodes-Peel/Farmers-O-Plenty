@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pine_trapdoor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "biomesoplenty:pine_trapdoor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "farmersoplenty:pine_cabinet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pine_trapdoor"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "farmersoplenty:pine_cabinet"
+    ]
+  }
+}

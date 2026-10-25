@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersoplenty:crushed_oats"
+    },
+    {
+      "item": "farmersoplenty:crushed_oats"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "farmersoplenty:honey_flapjack"
+  }
+}

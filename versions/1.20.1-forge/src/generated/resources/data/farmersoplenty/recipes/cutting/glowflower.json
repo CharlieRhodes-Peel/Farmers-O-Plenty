@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:glowflower"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "farmersoplenty:glowflower_berry"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  }
+}

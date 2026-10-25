@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:sea_oats"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "farmersoplenty:crushed_oats"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  }
+}

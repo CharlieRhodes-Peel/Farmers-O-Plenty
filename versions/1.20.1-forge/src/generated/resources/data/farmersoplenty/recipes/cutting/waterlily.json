@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:waterlily"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "farmersoplenty:waterlily_stems"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  }
+}
