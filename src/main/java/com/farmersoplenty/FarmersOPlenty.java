@@ -60,7 +60,10 @@ public class FarmersOPlenty {
 
             // Items we don't own (the 1.21.1 data map uses the LAVENDER tag; tags aren't loaded yet here)
             for (String id : new String[]{"lavender", "tall_lavender", "white_lavender", "tall_white_lavender", "barley"}) {
-                ComposterBlock.COMPOSTABLES.put(ExternalItems.bop(id), ModItems.COMPOST_CROP);
+                // Runtime, not datagen: skip (don't crash) if the installed BOP lacks this item.
+                ExternalItems.find(ExternalItems.BOP, id).ifPresentOrElse(
+                        item -> ComposterBlock.COMPOSTABLES.put(item, ModItems.COMPOST_CROP),
+                        () -> LOGGER.warn("Biomes O' Plenty item '{}' not found; skipping its compost entry", id));
             }
         });
     }

@@ -144,6 +144,7 @@ dependencies {
 val replaceProperties = listOf(
     "minecraft_version", "minecraft_version_range", "neo_version", "loader_version_range",
     "mod_id", "mod_name", "mod_license", "mod_version",
+    "bop_version_range", "fd_version_range",
 ).associateWith { property(it) as String }
 val generateModMetadata = tasks.register<ProcessResources>("generateModMetadata") {
     inputs.properties(replaceProperties)

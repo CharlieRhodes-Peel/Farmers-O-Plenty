@@ -8,6 +8,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
+import java.util.Optional;
+
 /**
  * References to items and tags owned by OTHER mods (Biomes O' Plenty, Farmer's Delight),
  * resolved by ResourceLocation instead of by importing their classes.
@@ -40,6 +42,15 @@ public final class ExternalItems {
                     "Is the owning mod on the datagen classpath?");
         }
         return item;
+    }
+
+    /**
+     * Non-throwing lookup for code that runs in the actual game (not datagen), where the
+     * player's installed version of the other mod may not have every item we know about.
+     */
+    public static Optional<Item> find(String namespace, String path) {
+        Item item = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(namespace, path));
+        return item == Items.AIR ? Optional.empty() : Optional.of(item);
     }
 
     public static Item bop(String path) { return item(BOP, path); }

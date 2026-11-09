@@ -28,3 +28,17 @@ A Compatibility Mod For Farmer's Delight and Biomes O' Plenty that adds new reci
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="biomesoplenty"
+    mandatory=true
+    versionRange="${bop_version_range}"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="farmersdelight"
+    mandatory=true
+    versionRange="${fd_version_range}"
+    ordering="AFTER"
+    side="BOTH"

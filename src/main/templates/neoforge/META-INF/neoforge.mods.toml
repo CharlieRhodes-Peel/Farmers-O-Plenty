@@ -93,3 +93,17 @@ A Compatibility Mod For Farmer's Delight and Biomes O' Plenty that adds new reci
 # stop your mod loading on the server for example.
 #[features.${mod_id}]
 #openGLVersion="[3.2,)"
+
+[[dependencies.${mod_id}]]
+    modId="biomesoplenty"
+    type="required"
+    versionRange="${bop_version_range}"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="farmersdelight"
+    type="required"
+    versionRange="${fd_version_range}"
+    ordering="AFTER"
+    side="BOTH"
